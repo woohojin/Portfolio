@@ -1,0 +1,14 @@
+@import "reset.css";
+@import "variables.css";
+@import "main.css";
+
+/*font*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Roboto:wght@900&display=swap");
+
+body {
+  background-color: var(--body-color);
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}

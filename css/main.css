@@ -1,0 +1,25 @@
+@import "animation/keyframes.css";
+
+#main {
+  display: flex;
+  align-items: center;
+  margin: 120px 0px 0px 140px;
+}
+
+#main-name {
+  color: white;
+  font-size: 52px;
+  display: flex;
+}
+#main-name_icon {
+  margin-left: 10px;
+  transform: translateY(6px);
+  font-size: 48px;
+}
+summary {
+  cursor: pointer;
+}
+
+summary::marker {
+  font-size: 0;
+}
