@@ -1,12 +1,18 @@
 #main.light {
   color: var(--color-dark);
 }
-#main-dark_switch.light {
+#darkmode_switch.light {
   border-color: var(--color-dark);
 }
-#main-dark_button.light {
+#darkmode_button.light {
   background-color: var(--color-dark);
 }
-#main-dark_icon.light {
+#darkmode_icon.light {
   color: var(--color-dark);
+}
+#main-cube.light {
+  border-color: var(--color-dark);
+}
+#main-cube.light div {
+  border-color: var(--color-dark);
 }
