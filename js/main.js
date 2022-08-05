@@ -1,15 +1,42 @@
-function mainName() {
-  const mnd = document.querySelector("details");
-  const mndt = document.getElementById("main-name_details_text");
-  const mni = document.getElementById("main-name_icon");
-  mnd.addEventListener("toggle", function () {
-    mndt.textContent = "done";
-    if (mni.className === "fa-solid fa-angle-up") {
-      mni.className = "fa-solid fa-angle-down";
-    } else {
-      mni.className = "fa-solid fa-angle-up";
+function darkMode() {
+  const main = document.getElementById("main");
+  const mds = document.getElementById("main-dark_switch");
+  const mdb = document.getElementById("main-dark_button");
+  const body = document.querySelector("body");
+  const mdi = document.getElementById("main-dark_icon");
+  mds.addEventListener("click", function () {
+    if (body.className === "dark") {
+      body.classList.add("light");
+      body.classList.remove("dark");
+
+      main.classList.add("light");
+      main.classList.remove("dark");
+
+      mds.classList.add("light");
+      mds.classList.remove("dark");
+
+      mdb.classList.add("light");
+      mdb.classList.remove("dark");
+
+      mdi.classList.add("light");
+      mdi.classList.remove("dark");
+    } else if (body.className === "light") {
+      body.classList.add("dark");
+      body.classList.remove("light");
+
+      main.classList.add("dark");
+      main.classList.remove("light");
+
+      mds.classList.add("dark");
+      mds.classList.remove("light");
+
+      mdb.classList.add("dark");
+      mdb.classList.remove("light");
+
+      mdi.classList.add("dark");
+      mdi.classList.remove("light");
     }
   });
 }
 
-mainName();
+darkMode();

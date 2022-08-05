@@ -1,14 +1,39 @@
 @import "reset.css";
 @import "variables.css";
 @import "main.css";
+@import "dark.css";
+@import "light.css";
+@import "animation/animation.css";
 
 /*font*/
-
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Roboto:wght@900&display=swap");
 
-body {
-  background-color: var(--body-color);
-  font-family: "Roboto", sans-serif;
+* {
   user-select: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 1000vh;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #182343;
+}
+
+body::-webkit-scrollbar-track {
+  background: none;
+}
+body.dark {
+  background-color: var(--color-dark);
+}
+body.light {
+  background-color: var(--color-light);
 }

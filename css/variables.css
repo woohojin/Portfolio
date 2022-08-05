@@ -1,3 +1,10 @@
 :root {
-  --body-color: #2c3251;
+  --color-dark: #111626;
+  --color-light: #f7f7f7;
+}
+.visible {
+  opacity: 100%;
+}
+.invisible {
+  opacity: 0%;
 }
