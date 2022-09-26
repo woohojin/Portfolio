@@ -8,11 +8,35 @@
     <title>Woo-Portfolio</title>
   </head>
   <body>
-    <div id="main">
-      <div id="main-name-con">
-        <div id="main-name_first" class="main-name">WOO</div>
-        <div id="main-name_second" class="main-name">HOJIN</div>
+    <article id="header" class="center">
+      <a id="header-logo" class="dark hidden" href="">W</a>
+      <div id="header-menu" class="center">
+        <a href="">Home</a>
+        <div>|</div>
+        <a href="">Project</a>
+        <div>|</div>
+        <a href="">Profile</a>
+        <div>|</div>
+        <a href="">Interactives</a>
       </div>
+
+      <div id="darkmode">
+        <i id="darkmode_icon" class="fa-solid fa-moon"></i>
+        <label id="darkmode_switch">
+          <span id="darkmode_button"></span>
+        </label>
+      </div>
+    </article>
+
+    <main class="center">
+      <div id="main-name-con" class="main-name">
+        <div id="main-name_first">
+          <div id="main-name_first_1">W</div>
+          <div id="main-name_first_2">OO</div>
+        </div>
+        <div id="main-name_second">HOJIN</div>
+      </div>
+
       <div id="main-portfolio-con">
         <div id="main-portfolio_p" class="main-portfolio">P</div>
         <div id="main-portfolio_o1" class="main-portfolio">o</div>
@@ -24,34 +48,22 @@
         <div id="main-portfolio_i" class="main-portfolio">i</div>
         <div id="main-portfolio_o3" class="main-portfolio">o</div>
       </div>
-      <div id="main-cube_one" class="main-cube">
-        <p>I</p>
-        <div id="main-cube_two" class="main-cube">
-          <p>B</p>
-        </div>
-        <div id="main-cube_three" class="main-cube">
-          <p>P</p>
-        </div>
-        <div id="main-cube_four" class="main-cube">
-          <p>P</p>
-        </div>
-        <div id="main-cube_five" class="main-cube">
-          <p>R</p>
-        </div>
-        <div id="main-cube_six" class="main-cube">
-          <p>N</p>
-        </div>
-      </div>
-    </div>
 
-    <div id="darkmode">
-      <i id="darkmode_icon" class="fa-solid fa-moon"></i>
-      <label id="darkmode_switch">
-        <span id="darkmode_button"></span>
-      </label>
-    </div>
+      <span id="start-button" class="center"
+        >See my Portfolio
+        <div id="start-button_background"></div>
+      </span>
+    </main>
+
+    <section id="content" class="hidden">
+      <img src="./img/kakaotalkImage.jpg" alt="" />
+      <span>꾸준히 노력하며 성장하여 풀스택 개발자가 되는것이 목표입니다.</span>
+    </section>
 
     <script src="js/main.js"></script>
-    <script src="https://kit.fontawesome.com/ab2b95b519.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/ab2b95b519.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

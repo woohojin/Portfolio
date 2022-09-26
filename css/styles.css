@@ -1,13 +1,31 @@
 @import "reset.css";
 @import "variables.css";
 @import "main.css";
-@import "dark.css";
-@import "light.css";
+@import "darkmode.css";
 @import "animation/animation.css";
+@import "start.css";
+@import "content.css";
+@import "header.css";
+@import "font.css";
 
-/*font*/
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Roboto:wght@900&display=swap");
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transparent {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: flex;
+}
+.fixed {
+  position: fixed;
+}
 
 * {
   user-select: none;
@@ -18,16 +36,18 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
-
 body::-webkit-scrollbar {
   width: 15px;
 }
-
 body::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
+}
+body.dark::-webkit-scrollbar-thumb {
   background: #182343;
 }
-
+body.light::-webkit-scrollbar-thumb {
+  background: var(--color-dark);
+}
 body::-webkit-scrollbar-track {
   background: none;
 }
