@@ -10,14 +10,14 @@
   <body>
     <article id="header" class="center">
       <a id="header-logo" class="dark hidden" href="">W</a>
-      <div id="header-menu" class="center">
+      <div id="header-menu" class="center hidden">
         <a href="">Home</a>
         <div>|</div>
-        <a href="">Project</a>
+        <a href="#content-project">Project</a>
         <div>|</div>
-        <a href="">Profile</a>
+        <a href="#content-profile">Profile</a>
         <div>|</div>
-        <a href="">Interactives</a>
+        <a>Interactives</a>
       </div>
 
       <div id="darkmode">
@@ -56,8 +56,19 @@
     </main>
 
     <section id="content" class="hidden">
-      <img src="./img/kakaotalkImage.jpg" alt="" />
-      <span>꾸준히 노력하며 성장하여 풀스택 개발자가 되는것이 목표입니다.</span>
+      <div id="content-project"></div>
+
+      <div id="content-profile">
+        <div id="mini-profile">
+          <img src="./img/kakaotalkImage.jpg" alt="" />
+          <span>우호진</span>
+          <span
+            >꾸준히 노력하며 성장하여<br />
+            풀스택 개발자가 되는것이 목표입니다.</span
+          >
+        </div>
+        <div>Tel 010-3260-8323</div>
+      </div>
     </section>
 
     <script src="js/main.js"></script>

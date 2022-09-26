@@ -1,5 +1,12 @@
 @import "font.css";
 
+#header-menu.dark a {
+  color: var(--color-light);
+}
+#header-menu.light a {
+  color: var(--color-dark);
+}
+
 #header {
   height: 50px;
   margin-top: 10px;
@@ -28,6 +35,18 @@
   cursor: pointer;
 }
 
+#darkmode_button.dark {
+  left: 2px;
+  transition: left 0.2s ease-in-out;
+  background-color: var(--color-light);
+}
+
+#darkmode_button.light {
+  left: 42px;
+  transition: left 0.2s ease-in-out;
+  background-color: var(--color-dark);
+}
+
 #darkmode {
   display: flex;
   position: fixed;
@@ -50,14 +69,6 @@
   height: 36px;
   border-radius: 50%;
   top: 2.45px;
-}
-#darkmode_button.light {
-  left: 42px;
-  transition: left 0.2s ease-in-out;
-}
-#darkmode_button.dark {
-  left: 2px;
-  transition: left 0.2s ease-in-out;
 }
 #darkmode_icon {
   font-size: 30px;

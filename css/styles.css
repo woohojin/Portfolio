@@ -8,6 +8,15 @@
 @import "header.css";
 @import "font.css";
 
+.dark {
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+.light {
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+}
 .center {
   display: flex;
   justify-content: center;

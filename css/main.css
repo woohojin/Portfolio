@@ -1,6 +1,7 @@
 @import "animation/keyframes.css";
 
 @import "font.css";
+
 main {
   flex-direction: column;
   height: 100vh;
@@ -69,6 +70,14 @@ main > * {
 }
 #main-portfolio_o3 {
   animation-delay: 1.1s;
+}
+
+#start-button.light {
+  color: var(--color-light);
+  background-color: #111626;
+}
+#start-button_background.light {
+  background-color: #513290;
 }
 
 #start-button {

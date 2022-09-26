@@ -10,6 +10,7 @@ const mainNameSecond = document.getElementById("main-name_second");
 const main = document.querySelector("main");
 const mainPortCon = document.getElementById("main-portfolio-con");
 const content = document.getElementById("content");
+const contentProfile = document.getElementById("content-profile");
 const darkmodeSwitch = document.getElementById("darkmode_switch");
 const darkmodeButton = document.getElementById("darkmode_button");
 const darkmodeIcon = document.getElementById("darkmode_icon");
@@ -28,6 +29,7 @@ window.onload = function darkMode() {
   headerLogo.classList.remove("dark");
   headerMenu.classList.remove("dark");
   main.classList.remove("dark");
+  content.classList.remove("dark");
   darkmodeSwitch.classList.remove("dark");
   darkmodeButton.classList.remove("dark");
   darkmodeIcon.classList.remove("dark");
@@ -39,6 +41,7 @@ window.onload = function darkMode() {
   headerLogo.classList.remove("light");
   headerMenu.classList.remove("light");
   main.classList.remove("light");
+  content.classList.remove("light");
   darkmodeSwitch.classList.remove("light");
   darkmodeButton.classList.remove("light");
   darkmodeIcon.classList.remove("light");
@@ -50,6 +53,7 @@ window.onload = function darkMode() {
   headerMenu.classList.add(localStorage.getItem("mode"));
   headerLogo.classList.add(localStorage.getItem("mode"));
   main.classList.add(localStorage.getItem("mode"));
+  content.classList.add(localStorage.getItem("mode"));
   darkmodeSwitch.classList.add(localStorage.getItem("mode"));
   darkmodeButton.classList.add(localStorage.getItem("mode"));
   darkmodeIcon.classList.add(localStorage.getItem("mode"));
@@ -74,6 +78,9 @@ window.onload = function darkMode() {
 
       main.classList.add(localStorage.getItem("mode"));
       main.classList.remove("dark");
+
+      content.classList.add(localStorage.getItem("mode"));
+      content.classList.remove("dark");
 
       darkmodeSwitch.classList.add(localStorage.getItem("mode"));
       darkmodeSwitch.classList.remove("dark");
@@ -107,6 +114,9 @@ window.onload = function darkMode() {
       main.classList.add(localStorage.getItem("mode"));
       main.classList.remove("light");
 
+      content.classList.add(localStorage.getItem("mode"));
+      content.classList.remove("light");
+
       darkmodeSwitch.classList.add(localStorage.getItem("mode"));
       darkmodeSwitch.classList.remove("light");
 
@@ -139,6 +149,7 @@ startButton.addEventListener("click", function () {
     headerLogo.classList.remove("hidden");
     main.classList.add("hidden");
     content.classList.remove("hidden");
-    content.classList.add("visible");
+    content.classList.add("center");
+    headerMenu.classList.remove("hidden");
   }, 2500);
 });
