@@ -4,20 +4,16 @@
 
 main {
   flex-direction: column;
-  height: 100vh;
   width: 100vw;
+  height: 900px;
 }
-main > * {
-  position: relative;
-  top: -100px;
-}
+
 .main-name {
   font-size: 90px;
   letter-spacing: 10px;
 }
 #main-name-con {
   display: flex;
-  flex-direction: row;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out forwards;
 }
@@ -79,7 +75,6 @@ main > * {
 #start-button_background.light {
   background-color: #513290;
 }
-
 #start-button {
   position: relative;
   bottom: 100px;

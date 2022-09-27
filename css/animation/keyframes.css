@@ -14,23 +14,6 @@
     transform: translateY(-150px);
   }
 }
-@keyframes logo {
-  0% {
-    transform: translateX(0);
-  }
-  30% {
-    font-size: inherit;
-    transform: translateY(-269px);
-  }
-  60% {
-    font-size: 45px;
-    transform: translate(-608px, -269px);
-  }
-  100% {
-    font-size: 45px;
-    transform: translate(-608px, -269px) rotateZ(-10deg);
-  }
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -40,5 +23,22 @@
   }
   100% {
     opacity: 100;
+  }
+}
+@keyframes logo {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    font-size: inherit;
+    transform: translateY(-338px);
+  }
+  60% {
+    font-size: 45px;
+    transform: translate(-608px, -338px);
+  }
+  100% {
+    font-size: 45px;
+    transform: translate(-608px, -338px) rotateZ(-10deg);
   }
 }

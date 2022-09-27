@@ -1,8 +1,6 @@
 @import "reset.css";
 @import "variables.css";
 @import "main.css";
-@import "darkmode.css";
-@import "animation/animation.css";
 @import "start.css";
 @import "content.css";
 @import "header.css";
@@ -26,14 +24,12 @@
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
+.visible {
+  opacity: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
 .hidden {
   display: none;
-}
-.visible {
-  display: flex;
-}
-.fixed {
-  position: fixed;
 }
 
 * {
@@ -42,7 +38,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  height: 100vh;
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {

@@ -13,15 +13,6 @@
   width: 100vw;
   height: 100vh;
 }
-#content-profile img {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  margin: 150px 0 15px 0;
-}
-#content-profile span {
-  margin-bottom: 20px;
-}
 
 #content.dark #mini-profile {
   border-right: 2px solid var(--color-light);
@@ -29,13 +20,85 @@
 #content.light #mini-profile {
   border-right: 2px solid var(--color-dark);
 }
-
 #mini-profile {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 400px;
+  width: 450px;
   height: 100%;
   font-family: "Noto Sans KR";
+}
+#mini-profile img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  margin: 150px 0 15px 0;
+}
+#mini-profile span {
+  margin-bottom: 20px;
+}
+
+#mini-profile-icon.dark {
+  color: var(--color-light);
+}
+#mini-profile-icon.light {
+  color: var(--color-dark);
+}
+#mini-profile-icon {
+  width: 30px;
+  height: 30px;
+}
+
+#profile-info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
+}
+#profile-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+#profile-skills {
+  display: flex;
+  width: 100%;
+}
+#profile-skills img {
+  height: 70px;
+  width: 70px;
+}
+#frontend-skills img:not(:first-child),
+#backend-skills img:not(:first-child),
+#programs img:not(:first-child) {
+  margin-left: 15px;
+}
+#frontend-skills.dark > span,
+#backend-skills.dark > span,
+#programs.dark > span {
+  border-bottom: 2px solid var(--color-light);
+}
+#frontend-skills.light > span,
+#backend-skills.light > span,
+#programs.light > span {
+  border-bottom: 2px solid var(--color-dark);
+}
+#frontend-skills > span,
+#backend-skills > span,
+#programs > span {
+  font-size: 40px;
+}
+#frontend-skills > div,
+#backend-skills > div,
+#programs > div {
+  margin-top: 50px;
+}
+#frontend-skills {
+  margin-left: 50px;
+}
+#backend-skills,
+#programs {
+  margin-left: 100px;
 }
