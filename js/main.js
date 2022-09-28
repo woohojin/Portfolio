@@ -12,9 +12,7 @@ const mainPortCon = document.getElementById("main-portfolio-con");
 const content = document.getElementById("content");
 const contentProfile = document.getElementById("content-profile");
 const miniProfileIcon = document.getElementById("mini-profile-icon");
-const frontSkills = document.getElementById("frontend-skills");
-const backSkills = document.getElementById("backend-skills");
-const programs = document.getElementById("programs");
+const profileSkills = document.getElementById("profile-skills");
 const darkmodeSwitch = document.getElementById("darkmode_switch");
 const darkmodeButton = document.getElementById("darkmode_button");
 const darkmodeIcon = document.getElementById("darkmode_icon");
@@ -34,9 +32,7 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("dark");
   main.classList.remove("dark");
   content.classList.remove("dark");
-  frontSkills.classList.remove("dark");
-  backSkills.classList.remove("dark");
-  programs.classList.remove("dark");
+  profileSkills.classList.remove("dark");
   miniProfileIcon.classList.remove("dark");
   darkmodeSwitch.classList.remove("dark");
   darkmodeButton.classList.remove("dark");
@@ -50,9 +46,7 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("light");
   main.classList.remove("light");
   content.classList.remove("light");
-  frontSkills.classList.remove("light");
-  backSkills.classList.remove("light");
-  programs.classList.remove("light");
+  profileSkills.classList.remove("light");
   miniProfileIcon.classList.remove("light");
   darkmodeSwitch.classList.remove("light");
   darkmodeButton.classList.remove("light");
@@ -66,9 +60,7 @@ window.onload = function darkMode() {
   headerLogo.classList.add(localStorage.getItem("mode"));
   main.classList.add(localStorage.getItem("mode"));
   content.classList.add(localStorage.getItem("mode"));
-  frontSkills.classList.add(localStorage.getItem("mode"));
-  backSkills.classList.add(localStorage.getItem("mode"));
-  programs.classList.add(localStorage.getItem("mode"));
+  profileSkills.classList.add(localStorage.getItem("mode"));
   miniProfileIcon.classList.add(localStorage.getItem("mode"));
   darkmodeSwitch.classList.add(localStorage.getItem("mode"));
   darkmodeButton.classList.add(localStorage.getItem("mode"));
@@ -98,14 +90,8 @@ window.onload = function darkMode() {
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("dark");
 
-      frontSkills.classList.add(localStorage.getItem("mode"));
-      frontSkills.classList.remove("dark");
-
-      backSkills.classList.add(localStorage.getItem("mode"));
-      backSkills.classList.remove("dark");
-
-      programs.classList.add(localStorage.getItem("mode"));
-      programs.classList.remove("dark");
+      profileSkills.classList.add(localStorage.getItem("mode"));
+      profileSkills.classList.remove("dark");
 
       miniProfileIcon.classList.add(localStorage.getItem("mode"));
       miniProfileIcon.classList.remove("dark");
@@ -145,14 +131,8 @@ window.onload = function darkMode() {
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("light");
 
-      frontSkills.classList.add(localStorage.getItem("mode"));
-      frontSkills.classList.remove("light");
-
-      backSkills.classList.add(localStorage.getItem("mode"));
-      backSkills.classList.remove("light");
-
-      programs.classList.add(localStorage.getItem("mode"));
-      programs.classList.remove("light");
+      profileSkills.classList.add(localStorage.getItem("mode"));
+      profileSkills.classList.remove("light");
 
       miniProfileIcon.classList.add(localStorage.getItem("mode"));
       miniProfileIcon.classList.remove("light");

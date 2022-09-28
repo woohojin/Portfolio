@@ -5,13 +5,17 @@
 }
 #content-project {
   width: 100vw;
-  height: 100vh;
+  height: 885px;
+}
+#content-home {
+  width: 100vw;
+  height: 885px;
 }
 #content-profile {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 100vh;
+  height: 885px;
 }
 
 #content.dark #mini-profile {
@@ -50,7 +54,7 @@
   height: 30px;
 }
 
-#profile-info {
+#profile {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -62,43 +66,45 @@
   flex-direction: column;
   font-size: 25px;
 }
+
+#profile-skills.dark > div > span {
+  border-bottom: 2px solid var(--color-light);
+}
+#profile-skills.light > div > span {
+  border-bottom: 2px solid var(--color-dark);
+}
 #profile-skills {
   display: flex;
+  position: relative;
+  top: 400px;
   width: 100%;
+}
+#profile-skills > :not(:first-child) {
+  margin-left: 90px;
 }
 #profile-skills img {
   height: 70px;
   width: 70px;
 }
-#frontend-skills img:not(:first-child),
-#backend-skills img:not(:first-child),
-#programs img:not(:first-child) {
+#profile-skills > div img:not(:first-child) {
   margin-left: 15px;
 }
-#frontend-skills.dark > span,
-#backend-skills.dark > span,
-#programs.dark > span {
-  border-bottom: 2px solid var(--color-light);
-}
-#frontend-skills.light > span,
-#backend-skills.light > span,
-#programs.light > span {
-  border-bottom: 2px solid var(--color-dark);
-}
-#frontend-skills > span,
-#backend-skills > span,
-#programs > span {
+#profile-skills > div > span {
   font-size: 40px;
 }
-#frontend-skills > div,
-#backend-skills > div,
-#programs > div {
-  margin-top: 50px;
+#profile-skills > div > div {
+  margin-top: 30px;
 }
-#frontend-skills {
+
+#profile-skills > :first-child {
   margin-left: 50px;
 }
-#backend-skills,
-#programs {
-  margin-left: 100px;
+#backend-skills > div :last-child {
+  width: 100px;
+}
+#education > div > span {
+  display: block;
+}
+#education > div > :first-child {
+  margin-bottom: 10px;
 }

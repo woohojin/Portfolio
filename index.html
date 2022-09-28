@@ -8,15 +8,12 @@
     <title>Woo-Portfolio</title>
   </head>
   <body>
-    <article id="header" class="center">
+    <div id="header" class="center">
       <a id="header-logo" class="dark hidden" href="">W</a>
       <div id="header-menu" class="center hidden">
-        <a href="">Home</a>
-        <div>|</div>
+        <a href="#content-home">Home</a>
         <a href="#content-project">Project</a>
-        <div>|</div>
         <a href="#content-profile">Profile</a>
-        <div>|</div>
         <a>Interactives</a>
       </div>
 
@@ -26,7 +23,7 @@
           <span id="darkmode_button"></span>
         </label>
       </div>
-    </article>
+    </div>
 
     <main class="center">
       <div id="main-name-con" class="main-name">
@@ -56,6 +53,7 @@
     </main>
 
     <section id="content" class="hidden">
+      <div id="content-home"></div>
       <div id="content-project"></div>
 
       <div id="content-profile">
@@ -75,8 +73,21 @@
               ></path>
             </svg>
           </a>
+          <a>
+            <svg id="mini-profile-icon" viewBox="0 0 50 50">
+              <polyline
+                points="10,17.164 
+25,26.164 40,17.164 "
+              ></polyline>
+              <path
+                d="M25,0C11.193,0,0,11.193,0,25s11.193,25,25,25c13.808,0,25-11.193,25-25S38.808,0,25,0z M42,32.333
+C42,34.358,40.309,36,38.223,36H11.778C9.691,36,8,34.358,8,32.333V17.666C8,15.642,9.691,14,11.778,14h26.444
+C40.309,14,42,15.642,42,17.666V32.333z"
+              ></path>
+            </svg>
+          </a>
         </div>
-        <div id="profile-info">
+        <div id="profile">
           <div id="profile-text">
             <span>Age | 01.06.24</span>
             <span>Tel | 010-3260-8323</span>
@@ -84,6 +95,33 @@
           </div>
 
           <div id="profile-skills">
+            <div id="education">
+              <span>Education</span>
+              <div>
+                <span
+                  >동원대학교
+                  <br />
+                  컴퓨터영상디자인과 졸업
+                </span>
+                <span>2020.03 ~ 2022.02</span>
+              </div>
+              <div>
+                <span
+                  >AI를 활용한 고객맞춤형
+                  <br />
+                  웹 플랫폼 구축 양성과정 수료
+                </span>
+                <span>2022.05.25 ~ 2022.11.09</span>
+              </div>
+            </div>
+
+            <div id="license">
+              <span>License</span>
+              <div>
+                <span>전자계산기기능사</span>
+              </div>
+            </div>
+
             <div id="frontend-skills">
               <span>Frontend Skills</span>
               <div>
@@ -92,6 +130,7 @@
                 <img src="./img/css-icon.png" alt="" />
               </div>
             </div>
+
             <div id="backend-skills">
               <span>Backend Skills</span>
               <div>
@@ -100,6 +139,7 @@
                 <img src="./img/servlet-icon.png" alt="" />
               </div>
             </div>
+
             <div id="programs">
               <span>Programs</span>
               <div>
@@ -108,8 +148,6 @@
               </div>
             </div>
           </div>
-
-          <div id="profile-education"></div>
         </div>
       </div>
     </section>
