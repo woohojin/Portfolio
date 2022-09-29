@@ -11,14 +11,11 @@ const main = document.querySelector("main");
 const mainPortCon = document.getElementById("main-portfolio-con");
 const content = document.getElementById("content");
 const contentProfile = document.getElementById("content-profile");
-const darkmodeSwitch = document.getElementById("darkmode_switch");
-const darkmodeButton = document.getElementById("darkmode_button");
-const darkmodeIcon = document.getElementById("darkmode_icon");
 const startButton = document.getElementById("start-button");
 const startButtonBackground = document.getElementById(
   "start-button_background"
 );
-
+const darkmodeSwitch = document.getElementById("darkmode_switch");
 const emailIcon = document.getElementById("email-icon");
 
 window.onload = function darkMode() {
@@ -32,9 +29,6 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("dark");
   main.classList.remove("dark");
   content.classList.remove("dark");
-  darkmodeSwitch.classList.remove("dark");
-  darkmodeButton.classList.remove("dark");
-  darkmodeIcon.classList.remove("dark");
   startButton.classList.remove("dark");
   startButtonBackground.classList.remove("dark");
 
@@ -44,9 +38,6 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("light");
   main.classList.remove("light");
   content.classList.remove("light");
-  darkmodeSwitch.classList.remove("light");
-  darkmodeButton.classList.remove("light");
-  darkmodeIcon.classList.remove("light");
   startButton.classList.remove("light");
   startButtonBackground.classList.remove("light");
 
@@ -56,9 +47,6 @@ window.onload = function darkMode() {
   headerLogo.classList.add(localStorage.getItem("mode"));
   main.classList.add(localStorage.getItem("mode"));
   content.classList.add(localStorage.getItem("mode"));
-  darkmodeSwitch.classList.add(localStorage.getItem("mode"));
-  darkmodeButton.classList.add(localStorage.getItem("mode"));
-  darkmodeIcon.classList.add(localStorage.getItem("mode"));
   startButton.classList.add(localStorage.getItem("mode"));
   startButtonBackground.classList.add(localStorage.getItem("mode"));
 
@@ -83,15 +71,6 @@ window.onload = function darkMode() {
 
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("dark");
-
-      darkmodeSwitch.classList.add(localStorage.getItem("mode"));
-      darkmodeSwitch.classList.remove("dark");
-
-      darkmodeButton.classList.add(localStorage.getItem("mode"));
-      darkmodeButton.classList.remove("dark");
-
-      darkmodeIcon.classList.add(localStorage.getItem("mode"));
-      darkmodeIcon.classList.remove("dark");
 
       startButton.classList.add(localStorage.getItem("mode"));
       startButton.classList.remove("dark");
@@ -118,15 +97,6 @@ window.onload = function darkMode() {
 
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("light");
-
-      darkmodeSwitch.classList.add(localStorage.getItem("mode"));
-      darkmodeSwitch.classList.remove("light");
-
-      darkmodeButton.classList.add(localStorage.getItem("mode"));
-      darkmodeButton.classList.remove("light");
-
-      darkmodeIcon.classList.add(localStorage.getItem("mode"));
-      darkmodeIcon.classList.remove("light");
 
       startButton.classList.add(localStorage.getItem("mode"));
       startButton.classList.remove("light");
