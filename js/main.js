@@ -1,22 +1,20 @@
+const startButton = document.getElementById("start-button");
+const darkmodeSwitch = document.getElementById("darkmode_switch");
+const emailIcon = document.getElementById("email-icon");
+
 const body = document.querySelector("body");
 const header = document.getElementById("header");
 const headerLogo = document.getElementById("header-logo");
 const headerMenu = document.getElementById("header-menu");
+const main = document.querySelector("main");
+const content = document.getElementById("content");
+
+const mainPortCon = document.getElementById("main-portfolio-con");
 const mainNameCon = document.getElementById("main-name-con");
 const mainNameFirst = document.getElementById("main-name_first");
 const mainNameFirstOne = document.getElementById("main-name_first_1");
 const mainNameFirstTwo = document.getElementById("main-name_first_2");
 const mainNameSecond = document.getElementById("main-name_second");
-const main = document.querySelector("main");
-const mainPortCon = document.getElementById("main-portfolio-con");
-const content = document.getElementById("content");
-const contentProfile = document.getElementById("content-profile");
-const startButton = document.getElementById("start-button");
-const startButtonBackground = document.getElementById(
-  "start-button_background"
-);
-const darkmodeSwitch = document.getElementById("darkmode_switch");
-const emailIcon = document.getElementById("email-icon");
 
 window.onload = function darkMode() {
   if (localStorage.getItem("mode") == null) {
@@ -29,8 +27,6 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("dark");
   main.classList.remove("dark");
   content.classList.remove("dark");
-  startButton.classList.remove("dark");
-  startButtonBackground.classList.remove("dark");
 
   body.classList.remove("light");
   header.classList.remove("light");
@@ -38,8 +34,6 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("light");
   main.classList.remove("light");
   content.classList.remove("light");
-  startButton.classList.remove("light");
-  startButtonBackground.classList.remove("light");
 
   body.classList.add(localStorage.getItem("mode"));
   header.classList.add(localStorage.getItem("mode"));
@@ -47,8 +41,6 @@ window.onload = function darkMode() {
   headerLogo.classList.add(localStorage.getItem("mode"));
   main.classList.add(localStorage.getItem("mode"));
   content.classList.add(localStorage.getItem("mode"));
-  startButton.classList.add(localStorage.getItem("mode"));
-  startButtonBackground.classList.add(localStorage.getItem("mode"));
 
   darkmodeSwitch.addEventListener("click", function () {
     if (body.className === "dark") {
@@ -71,12 +63,6 @@ window.onload = function darkMode() {
 
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("dark");
-
-      startButton.classList.add(localStorage.getItem("mode"));
-      startButton.classList.remove("dark");
-
-      startButtonBackground.classList.add(localStorage.getItem("mode"));
-      startButtonBackground.classList.remove("dark");
     } else if (body.className === "light") {
       localStorage.setItem("mode", "dark");
 
@@ -97,12 +83,6 @@ window.onload = function darkMode() {
 
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("light");
-
-      startButton.classList.add(localStorage.getItem("mode"));
-      startButton.classList.remove("light");
-
-      startButtonBackground.classList.add(localStorage.getItem("mode"));
-      startButtonBackground.classList.remove("light");
     }
   });
 };
@@ -111,9 +91,11 @@ startButton.addEventListener("click", function () {
   mainNameSecond.classList.add("transparent");
   mainPortCon.classList.add("transparent");
   startButton.classList.add("transparent");
+  header.classList.add("shadow");
+  content.classList.add("shadow");
   headerMenu.classList.add("fadeIn");
-
   mainNameFirst.classList.add("logo");
+
   setTimeout(function () {
     mainNameFirstTwo.classList.add("transparent");
   }, 2000);
@@ -131,4 +113,5 @@ emailIcon.addEventListener("click", function () {
   const emailClipBoard = document.getElementById("email-clipboard");
   copyText = emailClipBoard.value;
   navigator.clipboard.writeText(copyText).then();
+  alert("클립보드에 텍스트가 복사되었습니다.");
 });

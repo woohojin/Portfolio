@@ -8,12 +8,10 @@
 
 .dark {
   color: var(--color-light);
-  border-color: var(--color-light);
 }
 
 .light {
   color: var(--color-dark);
-  border-color: var(--color-dark);
 }
 .center {
   display: flex;
@@ -51,9 +49,6 @@ body.dark::-webkit-scrollbar-thumb {
 }
 body.light::-webkit-scrollbar-thumb {
   background: var(--color-dark);
-}
-body::-webkit-scrollbar-track {
-  background: none;
 }
 body.dark {
   background-color: var(--color-dark);
