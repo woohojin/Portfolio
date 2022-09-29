@@ -67,6 +67,7 @@ main {
 #main-portfolio_o3 {
   animation-delay: 1.1s;
 }
+
 main.light #start-button {
   color: var(--color-light);
   background-color: #111626;

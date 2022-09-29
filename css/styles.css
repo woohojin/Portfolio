@@ -33,6 +33,9 @@
 * {
   user-select: none;
 }
+a {
+  text-decoration: none;
+}
 
 body {
   font-family: "Roboto", sans-serif;

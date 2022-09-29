@@ -4,11 +4,11 @@ const emailIcon = document.getElementById("email-icon");
 
 const body = document.querySelector("body");
 const header = document.getElementById("header");
-const headerLogo = document.getElementById("header-logo");
-const headerMenu = document.getElementById("header-menu");
 const main = document.querySelector("main");
 const content = document.getElementById("content");
 
+const headerLogo = document.getElementById("header-logo");
+const headerMenu = document.getElementById("header-menu");
 const mainPortCon = document.getElementById("main-portfolio-con");
 const mainNameCon = document.getElementById("main-name-con");
 const mainNameFirst = document.getElementById("main-name_first");
@@ -23,22 +23,16 @@ window.onload = function darkMode() {
 
   body.classList.remove("dark");
   header.classList.remove("dark");
-  headerLogo.classList.remove("dark");
-  headerMenu.classList.remove("dark");
   main.classList.remove("dark");
   content.classList.remove("dark");
 
   body.classList.remove("light");
   header.classList.remove("light");
-  headerLogo.classList.remove("light");
-  headerMenu.classList.remove("light");
   main.classList.remove("light");
   content.classList.remove("light");
 
   body.classList.add(localStorage.getItem("mode"));
   header.classList.add(localStorage.getItem("mode"));
-  headerMenu.classList.add(localStorage.getItem("mode"));
-  headerLogo.classList.add(localStorage.getItem("mode"));
   main.classList.add(localStorage.getItem("mode"));
   content.classList.add(localStorage.getItem("mode"));
 
@@ -51,12 +45,6 @@ window.onload = function darkMode() {
 
       header.classList.add(localStorage.getItem("mode"));
       header.classList.remove("dark");
-
-      headerLogo.classList.add(localStorage.getItem("mode"));
-      headerLogo.classList.remove("dark");
-
-      headerMenu.classList.add(localStorage.getItem("mode"));
-      headerMenu.classList.remove("dark");
 
       main.classList.add(localStorage.getItem("mode"));
       main.classList.remove("dark");
@@ -71,12 +59,6 @@ window.onload = function darkMode() {
 
       header.classList.add(localStorage.getItem("mode"));
       header.classList.remove("light");
-
-      headerLogo.classList.add(localStorage.getItem("mode"));
-      headerLogo.classList.remove("light");
-
-      headerMenu.classList.add(localStorage.getItem("mode"));
-      headerMenu.classList.remove("light");
 
       main.classList.add(localStorage.getItem("mode"));
       main.classList.remove("light");

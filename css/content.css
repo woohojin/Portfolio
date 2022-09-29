@@ -2,15 +2,32 @@
 
 #content {
   flex-direction: column;
+  font-family: "Noto Sans KR", sans-serif;
 }
 #content-project {
   width: 100vw;
-  height: 885px;
+  height: 100vh;
 }
-#content-home {
+#content-project > div {
   width: 100vw;
-  height: 885px;
+  height: 100vh;
 }
+#content-project > div > div {
+  width: 1000px;
+  height: 600px;
+  border-radius: 25px;
+  background-color: aliceblue;
+}
+#content-project img {
+  border-radius: 20px;
+  width: 600px;
+  height: 400px;
+}
+
+/* #content-home {
+  width: 100vw;
+  height: 962px;
+} */
 #content-profile {
   display: flex;
   width: 100vw;
@@ -29,7 +46,6 @@
   align-items: center;
   width: 450px;
   height: 100%;
-  font-family: "Noto Sans KR";
 }
 #mini-profile img {
   width: 230px;
@@ -39,11 +55,9 @@
 }
 #content.shadow.dark #mini-profile img {
   box-shadow: 5px 7px 20px #070b18;
-  transition: box-shadow 0.25s ease-in-out;
 }
 #content.shadow.light #mini-profile img {
   box-shadow: 5px 7px 20px rgba(14, 21, 45, 0.3);
-  transition: box-shadow 0.25s ease-in-out;
 }
 #mini-profile_text {
   display: flex;
@@ -68,9 +82,14 @@
 #content.light #mini-profile svg {
   color: var(--color-dark);
 }
+#content.shadow.dark #mini-profile svg {
+  box-shadow: 5px 7px 20px #070b18;
+}
+#content.shadow.light #mini-profile svg {
+  box-shadow: 5px 7px 20px rgba(14, 21, 45, 0.3);
+}
 #mini-profile_icon {
   display: flex;
-  text-decoration: none;
 }
 #mini-profile_icon :first-child {
   margin-right: 9px;
@@ -81,7 +100,9 @@
 #mini-profile_icon svg {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
 }
+
 #profile {
   display: flex;
   align-items: flex-start;
@@ -89,6 +110,7 @@
   width: 100%;
   margin-top: 100px;
 }
+
 #content.dark #profile_skills > div > span {
   border-bottom: 2px solid var(--color-light);
 }
@@ -100,6 +122,9 @@
   position: relative;
   top: 450px;
   width: 100%;
+}
+#profile_skills > :first-child {
+  margin-left: 50px;
 }
 #profile_skills > :not(:first-child) {
   margin-left: 80px;
@@ -115,25 +140,23 @@
 #profile_skills > div > div {
   margin-top: 30px;
 }
+
 #frontend-skills div,
 #backend-skills div,
-#protrams div {
-  width: 300px;
+#programs div {
+  width: 290px;
   display: flex;
   flex-wrap: wrap;
-}
-#profile_skills > div > div > span {
-  font-family: "Noto Sans KR", sans-serif;
-}
-#profile_skills > :first-child {
-  margin-left: 50px;
 }
 #backend-skills > div :nth-child(3) {
   width: 100px;
 }
-#education > div > span {
-  display: block;
+#education > div {
+  width: 200px;
 }
 #education > div > :first-child {
   margin-bottom: 10px;
+}
+#education > div > span {
+  display: block;
 }
