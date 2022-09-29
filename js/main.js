@@ -11,8 +11,6 @@ const main = document.querySelector("main");
 const mainPortCon = document.getElementById("main-portfolio-con");
 const content = document.getElementById("content");
 const contentProfile = document.getElementById("content-profile");
-const miniProfileIcon = document.getElementById("mini-profile-icon");
-const profileSkills = document.getElementById("profile-skills");
 const darkmodeSwitch = document.getElementById("darkmode_switch");
 const darkmodeButton = document.getElementById("darkmode_button");
 const darkmodeIcon = document.getElementById("darkmode_icon");
@@ -20,6 +18,8 @@ const startButton = document.getElementById("start-button");
 const startButtonBackground = document.getElementById(
   "start-button_background"
 );
+
+const emailIcon = document.getElementById("email-icon");
 
 window.onload = function darkMode() {
   if (localStorage.getItem("mode") == null) {
@@ -32,8 +32,6 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("dark");
   main.classList.remove("dark");
   content.classList.remove("dark");
-  profileSkills.classList.remove("dark");
-  miniProfileIcon.classList.remove("dark");
   darkmodeSwitch.classList.remove("dark");
   darkmodeButton.classList.remove("dark");
   darkmodeIcon.classList.remove("dark");
@@ -46,8 +44,6 @@ window.onload = function darkMode() {
   headerMenu.classList.remove("light");
   main.classList.remove("light");
   content.classList.remove("light");
-  profileSkills.classList.remove("light");
-  miniProfileIcon.classList.remove("light");
   darkmodeSwitch.classList.remove("light");
   darkmodeButton.classList.remove("light");
   darkmodeIcon.classList.remove("light");
@@ -60,8 +56,6 @@ window.onload = function darkMode() {
   headerLogo.classList.add(localStorage.getItem("mode"));
   main.classList.add(localStorage.getItem("mode"));
   content.classList.add(localStorage.getItem("mode"));
-  profileSkills.classList.add(localStorage.getItem("mode"));
-  miniProfileIcon.classList.add(localStorage.getItem("mode"));
   darkmodeSwitch.classList.add(localStorage.getItem("mode"));
   darkmodeButton.classList.add(localStorage.getItem("mode"));
   darkmodeIcon.classList.add(localStorage.getItem("mode"));
@@ -89,12 +83,6 @@ window.onload = function darkMode() {
 
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("dark");
-
-      profileSkills.classList.add(localStorage.getItem("mode"));
-      profileSkills.classList.remove("dark");
-
-      miniProfileIcon.classList.add(localStorage.getItem("mode"));
-      miniProfileIcon.classList.remove("dark");
 
       darkmodeSwitch.classList.add(localStorage.getItem("mode"));
       darkmodeSwitch.classList.remove("dark");
@@ -130,12 +118,6 @@ window.onload = function darkMode() {
 
       content.classList.add(localStorage.getItem("mode"));
       content.classList.remove("light");
-
-      profileSkills.classList.add(localStorage.getItem("mode"));
-      profileSkills.classList.remove("light");
-
-      miniProfileIcon.classList.add(localStorage.getItem("mode"));
-      miniProfileIcon.classList.remove("light");
 
       darkmodeSwitch.classList.add(localStorage.getItem("mode"));
       darkmodeSwitch.classList.remove("light");
@@ -173,4 +155,10 @@ startButton.addEventListener("click", function () {
     content.classList.add("center");
     headerMenu.classList.remove("hidden");
   }, 2500);
+});
+
+emailIcon.addEventListener("click", function () {
+  const emailClipBoard = document.getElementById("email-clipboard");
+  copyText = emailClipBoard.value;
+  navigator.clipboard.writeText(copyText).then();
 });

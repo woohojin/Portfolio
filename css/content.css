@@ -13,7 +13,6 @@
 }
 #content-profile {
   display: flex;
-  flex-direction: row;
   width: 100vw;
   height: 885px;
 }
@@ -27,7 +26,6 @@
 #mini-profile {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   width: 450px;
   height: 100%;
@@ -35,25 +33,44 @@
 }
 #mini-profile img {
   width: 230px;
-  height: 230px;
+  height: 240px;
   border-radius: 50%;
   margin: 150px 0 15px 0;
 }
-#mini-profile span {
-  margin-bottom: 20px;
+#mini-profile_text {
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  text-align: left;
+  margin-bottom: 40px;
 }
-
-#mini-profile-icon.dark {
+#mini-profile_text :first-child {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#mini-profile_text :nth-child(6),
+#mini-profile_text :nth-child(7) {
+  margin-bottom: 4px;
+}
+#content.dark #mini-profile svg {
   color: var(--color-light);
 }
-#mini-profile-icon.light {
+#content.light #mini-profile svg {
   color: var(--color-dark);
 }
-#mini-profile-icon {
-  width: 30px;
-  height: 30px;
+#mini-profile_icon {
+  display: flex;
+  text-decoration: none;
 }
-
+#mini-profile_icon :first-child {
+  margin-right: 9px;
+}
+#mini-profile_icon svg {
+  width: 40px;
+  height: 40px;
+}
 #profile {
   display: flex;
   align-items: flex-start;
@@ -61,42 +78,38 @@
   width: 100%;
   margin-top: 100px;
 }
-#profile-text {
-  display: flex;
-  flex-direction: column;
-  font-size: 25px;
-}
-
-#profile-skills.dark > div > span {
+#content.dark #profile_skills > div > span {
   border-bottom: 2px solid var(--color-light);
 }
-#profile-skills.light > div > span {
+#content.light #profile_skills > div > span {
   border-bottom: 2px solid var(--color-dark);
 }
-#profile-skills {
+#profile_skills {
   display: flex;
   position: relative;
-  top: 400px;
+  top: 450px;
   width: 100%;
 }
-#profile-skills > :not(:first-child) {
+#profile_skills > :not(:first-child) {
   margin-left: 90px;
 }
-#profile-skills img {
+#profile_skills img {
   height: 70px;
   width: 70px;
 }
-#profile-skills > div img:not(:first-child) {
+#profile_skills > div img:not(:first-child) {
   margin-left: 15px;
 }
-#profile-skills > div > span {
+#profile_skills > div > span {
   font-size: 40px;
 }
-#profile-skills > div > div {
+#profile_skills > div > div {
   margin-top: 30px;
 }
-
-#profile-skills > :first-child {
+#profile_skills > div > div > span {
+  font-family: "Noto Sans KR", sans-serif;
+}
+#profile_skills > :first-child {
   margin-left: 50px;
 }
 #backend-skills > div :last-child {

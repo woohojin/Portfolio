@@ -1,12 +1,12 @@
 @import "font.css";
 
-#header.dark {
+header.dark {
   background-color: var(--color-dark);
 }
-#header.light {
+header.light {
   background-color: var(--color-light);
 }
-#header {
+header {
   position: fixed;
   width: 100vw;
   height: 50px;
@@ -45,12 +45,12 @@
   margin-left: 60px;
 }
 
-#darkmode_button.dark {
+header.dark #darkmode_button {
   left: 2px;
   transition: left 0.2s ease-in-out;
   background-color: var(--color-light);
 }
-#darkmode_button.light {
+header.light #darkmode_button {
   left: 42px;
   transition: left 0.2s ease-in-out;
   background-color: var(--color-dark);

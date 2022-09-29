@@ -47,7 +47,7 @@ body::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
 }
 body.dark::-webkit-scrollbar-thumb {
-  background: #182343;
+  background: var(--color-dark2);
 }
 body.light::-webkit-scrollbar-thumb {
   background: var(--color-dark);
