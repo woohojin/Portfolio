@@ -6,16 +6,28 @@
 }
 #content-project {
   width: 100vw;
-  height: 100vh;
+  height: 1800px;
 }
 #content-project > div {
   width: 100vw;
-  height: 100vh;
+  height: 700px;
+  margin-top: 140px;
 }
+
 #content-project img {
   border-radius: 20px;
   width: 600px;
   height: 400px;
+}
+#content.dark .project-info {
+  background-color: var(--color-light);
+  color: var(--color-dark2);
+  box-shadow: 5px 7px 20px #070b18;
+}
+#content.light .project-info {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  box-shadow: 5px 7px 20px rgba(14, 21, 45, 0.3);
 }
 .project-info {
   display: flex;
@@ -23,17 +35,24 @@
   width: 1300px;
   height: 600px;
   border-radius: 25px;
-  background-color: aliceblue;
+}
+#content.dark .project-image img {
+  box-shadow: 5px 7px 20px rgba(14, 21, 45, 0.3);
+}
+#content.light .project-image img {
+  box-shadow: 5px 7px 20px #070b18;
 }
 .project-image {
   margin: 0 50px;
+  width: 600px;
+  height: 400px;
 }
 .project-info_text {
   display: flex;
   flex-direction: column;
   font-size: 20px;
 }
-.project-info_text :first-child {
+.project-info_text > :first-child {
   font-size: 30px;
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-weight: 600;
@@ -41,8 +60,25 @@
 .project-info_text span {
   margin-bottom: 30px;
 }
+.project-link {
+  display: flex;
+}
+.project-link > :first-child {
+  margin-right: 30px;
+}
+#content.dark .project-info a {
+  background-color: var(--color-dark2);
+  color: var(--color-light);
+  box-shadow: 5px 7px 20px rgba(14, 21, 45, 0.3);
+}
+#content.light .project-info a {
+  background-color: var(--color-light);
+  color: var(--color-dark2);
+  box-shadow: 5px 7px 20px #070b18;
+}
+
 .project-info_text a {
-  width: 270px;
+  width: 190px;
   height: 40px;
   border-radius: 25px;
   font-family: "Noto Sans KR";
@@ -50,7 +86,7 @@
   text-shadow: rgb(0 0 0 / 25%) 1px 0 8px;
   padding-bottom: 5px;
   cursor: pointer;
-  background-color: #212a47;
+  color: var(--color-light);
 }
 /* .project-info_text a div {
   height: 40px;
