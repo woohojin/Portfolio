@@ -16,6 +16,7 @@ main {
   display: flex;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out forwards;
+  z-index: 999;
 }
 #main-name_first {
   display: flex;
