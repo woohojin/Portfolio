@@ -232,3 +232,8 @@
 #education > div > span {
   display: block;
 }
+
+#content-interactives {
+  width: 100vw;
+  height: 100vh;
+}
