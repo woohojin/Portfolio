@@ -62,9 +62,12 @@
 }
 .project-link {
   display: flex;
+  width: 500px;
+  flex-wrap: wrap;
 }
 .project-link > :first-child {
   margin-right: 30px;
+  margin-bottom: 10px;
 }
 #content.dark .project-info a {
   background-color: var(--color-dark2);
