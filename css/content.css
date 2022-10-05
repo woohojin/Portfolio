@@ -122,16 +122,16 @@
   width: 450px;
   height: 100%;
 }
-#mini-profile img {
+#mini-profile > img {
   width: 230px;
   height: 240px;
   border-radius: 50%;
   margin: 150px 0 15px 0;
 }
-#content.shadow.dark #mini-profile img {
+#content.shadow.dark #mini-profile > img {
   box-shadow: 5px 7px 20px #070b18;
 }
-#content.shadow.light #mini-profile img {
+#content.shadow.light #mini-profile > img {
   box-shadow: 5px 7px 20px rgba(14, 21, 45, 0.3);
 }
 #mini-profile_text {
@@ -166,15 +166,15 @@
 #mini-profile_icon {
   display: flex;
 }
-#mini-profile_icon :first-child {
+#mini-profile_icon a {
   margin-right: 9px;
 }
 #mini-profile_icon :nth-child(2) {
   cursor: pointer;
 }
 #mini-profile_icon svg {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
 }
 
