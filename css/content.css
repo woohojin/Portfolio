@@ -166,7 +166,7 @@
 #mini-profile_icon {
   display: flex;
 }
-#mini-profile_icon a {
+#mini-profile_icon li {
   margin-right: 9px;
 }
 #mini-profile_icon :nth-child(2) {
@@ -212,13 +212,13 @@
 #profile_skills > div > span {
   font-size: 40px;
 }
-#profile_skills > div > div {
+#profile_skills > div > ul {
   margin-top: 30px;
 }
 
-#frontend-skills div,
-#backend-skills div,
-#programs div {
+#frontend-skills ul,
+#backend-skills ul,
+#programs ul {
   width: 290px;
   display: flex;
   flex-wrap: wrap;
