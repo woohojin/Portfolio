@@ -1,6 +1,9 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+canvas.width = 1600;
+canvas.height = 800;
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
@@ -23,10 +26,7 @@ function keyDownHandler(e) {
   }
 }
 
-canvas.width = 1600;
-canvas.height = 800;
-
-ctx.font = "40px serif";
+ctx.font = "40px defaultFont";
 
 const minWidth = 0;
 const maxWidth = 1600;
@@ -71,12 +71,13 @@ var gravity = 3.5;
 var gravity2 = 4;
 var ballSpeed = 3.5;
 
-var hour = 0;
 var min = 0;
 var sec = 0;
 var time = 0;
 var tm = "00";
 var ts = "00";
+
+var life = 3;
 
 function ball() {
   ctx.beginPath();
@@ -155,13 +156,53 @@ function bouncing() {
     (ballY >= block6Y - ballRadius &&
       ballX >= block6X - ballRadius &&
       ballX - ballRadius <= block6X + blockWidth) ||
-    ballY == maxHeight - ballRadius
+    (ballY == maxHeight - ballRadius && ballX < blockX)
   ) {
     ballSpeed = -gravity;
 
     setTimeout(() => {
       ballSpeed = gravity;
     }, 500);
+  }
+}
+
+function finish() {
+  if (ballX >= doorX) {
+    alert("Clear! Clear Time : " + tm + " min " + ts + " sec");
+    restart();
+  }
+}
+function respawn() {
+  ballX = 80;
+  ballY = 600;
+
+  life--;
+
+  if (life < 0) {
+    restart();
+    alert("Game Over. Restart the Game.");
+  }
+}
+function restart() {
+  rightPressed = false;
+  leftPressed = false;
+
+  ballX = 80;
+  ballY = 600;
+
+  min = 0;
+  sec = 0;
+  time = 0;
+  tm = "00";
+  ts = "00";
+
+  life = 3;
+}
+
+function bug() {
+  if (ballY > maxHeight) {
+    restart();
+    alert("Sorry, Bug Occured. Restart the Game.");
   }
 }
 
@@ -185,31 +226,14 @@ function stopwatch() {
   }, 1000);
 }
 
-function finish() {
-  if (ballX >= doorX + blockWidth / 2) {
-    alert("Clear!");
-    restart();
-  }
-}
-
-function restart() {
-  ballX = 80;
-  ballY = 600;
-}
-
-function bug() {
-  if (ballY > maxHeight) {
-    restart();
-    alert("Sorry, Bug Occured. Restart the Game.");
-  }
-}
-
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillText(tm + ":", 50, 100);
-  ctx.fillText(ts, 110, 100);
+  ctx.fillText(tm, 50, 50);
+  ctx.fillText(":", 100, 47);
+  ctx.fillText(ts, 115, 50);
 
+  ctx.fillText("Your life : " + life, 1350, 50);
   block();
   door();
   ball();
@@ -281,6 +305,10 @@ function draw() {
     ballX == block6X + blockWidth + ballRadius
   ) {
     ballX += moveSpeed;
+  }
+
+  if (ballY == maxHeight - ballRadius && ballX > blockX) {
+    respawn();
   }
 }
 
