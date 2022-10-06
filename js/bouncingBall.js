@@ -51,19 +51,19 @@ var block3Y = 600;
 var block3Height = 200;
 
 var block4X = 800;
-var block4Y = 530;
-var block4Height = 270;
+var block4Y = 550;
+var block4Height = 250;
 
 var block5X = 1050;
-var block5Y = 480;
-var block5Height = 320;
+var block5Y = 500;
+var block5Height = 300;
 
 var block6X = 1300;
-var block6Y = 400;
-var block6Height = 400;
+var block6Y = 450;
+var block6Height = 350;
 
 var doorX = 1300;
-var doorY = 300;
+var doorY = 350;
 var doorRadius = 50;
 
 var moveSpeed = 2.5;
@@ -83,55 +83,46 @@ function ball() {
   ctx.beginPath();
   ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
   ctx.closePath();
-  ctx.fillStyle = "#FFF36B";
-  ctx.fill();
+
+  var ballImg = document.getElementById("ball-image");
+  ctx.drawImage(
+    ballImg,
+    ballX - ballRadius,
+    ballY - ballRadius,
+    ballRadius * 2,
+    ballRadius * 2
+  );
 }
 
 function block() {
+  var blockImg = document.getElementById("block-image");
+
   ctx.fillStyle = "black";
+  ctx.drawImage(blockImg, blockX, blockY, 100, 100);
 
-  ctx.beginPath();
-  ctx.fillRect(blockX, blockY, blockWidth, blockHeight);
-  ctx.stroke();
-  ctx.closePath();
+  ctx.drawImage(blockImg, block2X, block2Y, 100, 100);
 
-  ctx.beginPath();
-  ctx.fillRect(block2X, block2Y, blockWidth, block2Height);
-  ctx.stroke();
-  ctx.closePath();
+  ctx.drawImage(blockImg, block3X, block3Y, 100, 100);
+  ctx.drawImage(blockImg, block3X, block3Y + 100, 100, 100);
 
-  ctx.beginPath();
-  ctx.fillRect(block3X, block3Y, blockWidth, block3Height);
-  ctx.stroke();
-  ctx.closePath();
+  ctx.drawImage(blockImg, block4X, block4Y, 100, 100);
+  ctx.drawImage(blockImg, block4X, block4Y + 100, 100, 100);
+  ctx.drawImage(blockImg, block4X, block4Y + 200, 100, 100);
 
-  ctx.beginPath();
-  ctx.fillRect(block4X, block4Y, blockWidth, block4Height);
-  ctx.stroke();
-  ctx.closePath();
+  ctx.drawImage(blockImg, block5X, block5Y, 100, 100);
+  ctx.drawImage(blockImg, block5X, block5Y + 100, 100, 100);
+  ctx.drawImage(blockImg, block5X, block5Y + 200, 100, 100);
+  ctx.drawImage(blockImg, block5X, block5Y + 300, 100, 100);
 
-  ctx.beginPath();
-  ctx.fillRect(block5X, block5Y, blockWidth, block5Height);
-  ctx.stroke();
-  ctx.closePath();
-
-  ctx.beginPath();
-  ctx.fillRect(block6X, block6Y, blockWidth, block6Height);
-  ctx.stroke();
-  ctx.closePath();
+  ctx.drawImage(blockImg, block6X, block6Y, 100, 100);
+  ctx.drawImage(blockImg, block6X, block6Y + 100, 100, 100);
+  ctx.drawImage(blockImg, block6X, block6Y + 200, 100, 100);
+  ctx.drawImage(blockImg, block6X, block6Y + 300, 100, 100);
 }
 
 function door() {
-  ctx.beginPath();
-  ctx.arc(doorX + doorRadius, doorY, doorRadius, 0, Math.PI, true);
-  ctx.moveTo(doorX, 300);
-  ctx.lineTo(doorX, 400);
-  ctx.lineTo(doorX + blockWidth, 400);
-  ctx.lineTo(doorX + blockWidth, 300);
-  ctx.closePath();
-  ctx.fillStyle = "#FFFFFF";
-  ctx.stroke();
-  ctx.fill();
+  var doorImg = document.getElementById("door-image");
+  ctx.drawImage(doorImg, block6X, block6Y - 140, 100, 140);
 }
 
 function bouncing() {
@@ -228,6 +219,8 @@ function stopwatch() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#FFFFFF";
 
   ctx.fillText(tm, 50, 50);
   ctx.fillText(":", 100, 47);
