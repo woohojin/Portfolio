@@ -13,7 +13,6 @@
   height: 700px;
   margin-top: 140px;
 }
-
 #content-project img {
   border-radius: 20px;
   width: 600px;
@@ -239,4 +238,12 @@
 #content-interactives {
   width: 100vw;
   height: 100vh;
+}
+#interactives-link {
+  margin-top: 100px;
+  flex-direction: column;
+}
+#interactives-link a {
+  color: var(--color-light);
+  margin-top: 30px;
 }
