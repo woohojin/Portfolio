@@ -1,8 +1,32 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+var rightPressed = false;
+var leftPressed = false;
+
+function keyUpHandler(e) {
+  if (e.keyCode == 37) {
+    leftPressed = false;
+  } else if (e.keyCode == 39) {
+    rightPressed = false;
+  }
+}
+
+function keyDownHandler(e) {
+  if (e.keyCode == 37) {
+    leftPressed = true;
+  } else if (e.keyCode == 39) {
+    rightPressed = true;
+  }
+}
+
 canvas.width = 1600;
 canvas.height = 800;
+
+ctx.font = "40px serif";
 
 const minWidth = 0;
 const maxWidth = 1600;
@@ -22,39 +46,43 @@ var block2X = 350;
 var block2Y = 700;
 var block2Height = 100;
 
-var moveSpeed = 3;
-var bounceSpeed = 3.5;
+var block3X = 580;
+var block3Y = 600;
+var block3Height = 200;
 
-var rightPressed = false;
-var leftPressed = false;
+var block4X = 800;
+var block4Y = 530;
+var block4Height = 270;
 
-var detected = false;
+var block5X = 1050;
+var block5Y = 480;
+var block5Height = 320;
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+var block6X = 1300;
+var block6Y = 400;
+var block6Height = 400;
 
-function keyUpHandler(e) {
-  if (e.keyCode == 37) {
-    leftPressed = false;
-  } else if (e.keyCode == 39) {
-    rightPressed = false;
-  }
-}
+var doorX = 1300;
+var doorY = 300;
+var doorRadius = 50;
 
-function keyDownHandler(e) {
-  if (e.keyCode == 37) {
-    leftPressed = true;
-  } else if (e.keyCode == 39) {
-    rightPressed = true;
-  }
-}
+var moveSpeed = 2.5;
+var gravity = 3.5;
+var gravity2 = 4;
+var ballSpeed = 3.5;
+
+var hour = 0;
+var min = 0;
+var sec = 0;
+var time = 0;
+var tm = "00";
+var ts = "00";
 
 function ball() {
   ctx.beginPath();
   ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
   ctx.closePath();
   ctx.fillStyle = "#FFF36B";
-  ctx.stroke();
   ctx.fill();
 }
 
@@ -70,27 +98,103 @@ function block() {
   ctx.fillRect(block2X, block2Y, blockWidth, block2Height);
   ctx.stroke();
   ctx.closePath();
+
+  ctx.beginPath();
+  ctx.fillRect(block3X, block3Y, blockWidth, block3Height);
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.beginPath();
+  ctx.fillRect(block4X, block4Y, blockWidth, block4Height);
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.beginPath();
+  ctx.fillRect(block5X, block5Y, blockWidth, block5Height);
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.beginPath();
+  ctx.fillRect(block6X, block6Y, blockWidth, block6Height);
+  ctx.stroke();
+  ctx.closePath();
+}
+
+function door() {
+  ctx.beginPath();
+  ctx.arc(doorX + doorRadius, doorY, doorRadius, 0, Math.PI, true);
+  ctx.moveTo(doorX, 300);
+  ctx.lineTo(doorX, 400);
+  ctx.lineTo(doorX + blockWidth, 400);
+  ctx.lineTo(doorX + blockWidth, 300);
+  ctx.closePath();
+  ctx.fillStyle = "#FFFFFF";
+  ctx.stroke();
+  ctx.fill();
 }
 
 function bouncing() {
-  ballY += bounceSpeed;
+  ballY += ballSpeed;
 
   if (
     (ballY >= blockY - ballRadius &&
       ballX >= blockX - ballRadius &&
       ballX - ballRadius <= blockX + blockWidth) ||
-    ballY == maxHeight - ballRadius ||
     (ballY >= block2Y - ballRadius &&
       ballX >= block2X - ballRadius &&
       ballX - ballRadius <= block2X + blockWidth) ||
+    (ballY >= block3Y - ballRadius &&
+      ballX >= block3X - ballRadius &&
+      ballX - ballRadius <= block3X + blockWidth) ||
+    (ballY >= block4Y - ballRadius &&
+      ballX >= block4X - ballRadius &&
+      ballX - ballRadius <= block4X + blockWidth) ||
+    (ballY >= block5Y - ballRadius &&
+      ballX >= block5X - ballRadius &&
+      ballX - ballRadius <= block5X + blockWidth) ||
+    (ballY >= block6Y - ballRadius &&
+      ballX >= block6X - ballRadius &&
+      ballX - ballRadius <= block6X + blockWidth) ||
     ballY == maxHeight - ballRadius
   ) {
-    bounceSpeed = -bounceSpeed;
+    ballSpeed = -gravity;
 
     setTimeout(() => {
-      bounceSpeed = -bounceSpeed;
+      ballSpeed = gravity;
     }, 500);
   }
+}
+
+function stopwatch() {
+  setInterval(function () {
+    time++;
+
+    min = Math.floor(time / 60);
+    sec = time % 60;
+    min = min % 60;
+
+    tm = min;
+    ts = sec;
+
+    if (tm < 10) {
+      tm = "0" + min;
+    }
+    if (ts < 10) {
+      ts = "0" + sec;
+    }
+  }, 1000);
+}
+
+function finish() {
+  if (ballX >= doorX + blockWidth / 2) {
+    alert("Clear!");
+    restart();
+  }
+}
+
+function restart() {
+  ballX = 80;
+  ballY = 600;
 }
 
 function bug() {
@@ -102,19 +206,16 @@ function bug() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillText(tm + ":", 50, 100);
+  ctx.fillText(ts, 110, 100);
+
   block();
+  door();
   ball();
   bouncing();
+  finish();
   bug();
-
-  ctx.beginPath();
-  ctx.moveTo(block2X - ballRadius, block2Y + block2Height);
-  ctx.lineTo(block2X - ballRadius, block2Y - ballRadius);
-  ctx.lineTo(block2X + blockWidth + ballRadius, block2Y - ballRadius);
-  ctx.lineTo(block2X + blockWidth + ballRadius, block2Y + block2Height);
-  ctx.strokeStyle = "red";
-  ctx.stroke();
-  ctx.closePath();
 
   if (rightPressed) {
     ballX += moveSpeed;
@@ -138,18 +239,50 @@ function draw() {
   }
 
   if (ballY >= block2Y - ballRadius && ballX == block2X - ballRadius) {
+    ballX -= moveSpeed;
   } else if (
     ballY >= block2Y - ballRadius &&
     ballX == block2X + blockWidth + ballRadius
   ) {
     ballX += moveSpeed;
-    alert("test2");
+  }
+
+  if (ballY >= block3Y - ballRadius && ballX == block3X - ballRadius) {
+    ballX -= moveSpeed;
+  } else if (
+    ballY >= block3Y - ballRadius &&
+    ballX == block3X + blockWidth + ballRadius
+  ) {
+    ballX += moveSpeed;
+  }
+
+  if (ballY >= block4Y - ballRadius && ballX == block4X - ballRadius) {
+    ballX -= moveSpeed;
+  } else if (
+    ballY >= block4Y - ballRadius &&
+    ballX == block4X + blockWidth + ballRadius
+  ) {
+    ballX += moveSpeed;
+  }
+
+  if (ballY >= block5Y - ballRadius && ballX == block5X - ballRadius) {
+    ballX -= moveSpeed;
+  } else if (
+    ballY >= block5Y - ballRadius &&
+    ballX == block5X + blockWidth + ballRadius
+  ) {
+    ballX += moveSpeed;
+  }
+
+  if (ballY >= block6Y - ballRadius && ballX == block6X - ballRadius) {
+    ballX -= moveSpeed;
+  } else if (
+    ballY >= block6Y - ballRadius &&
+    ballX == block6X + blockWidth + ballRadius
+  ) {
+    ballX += moveSpeed;
   }
 }
 
-function restart() {
-  ballX = 80;
-  ballY = 600;
-}
-
 setInterval(draw, 10);
+stopwatch();
