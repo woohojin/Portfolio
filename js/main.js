@@ -112,10 +112,13 @@ interactives.addEventListener("click", function () {
   window.scrollTo(0, 2685);
 });
 
-const output = document.querySelector("#output");
+// const output = document.querySelector("#output");
+
+// window.addEventListener("scroll", (event) => {
+//   output.textContent = `scrollTop : ${this.scrollY}`;
+// });
 
 window.addEventListener("scroll", (event) => {
-  output.textContent = `scrollTop : ${this.scrollY}`;
   if (this.scrollY >= 0 && this.scrollY < 1400) {
     profile.classList.remove("bar");
     interactives.classList.remove("bar");
