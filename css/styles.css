@@ -9,7 +9,6 @@
 .dark {
   color: var(--color-light);
 }
-
 .light {
   color: var(--color-dark);
 }
@@ -28,6 +27,9 @@
 }
 .hidden {
   display: none;
+}
+.bar {
+  border-bottom: 3px solid var(--color-light);
 }
 
 * {

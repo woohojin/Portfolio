@@ -2,6 +2,10 @@ const startButton = document.getElementById("start-button");
 const darkmodeSwitch = document.getElementById("darkmode_switch");
 const emailIcon = document.getElementById("email-icon");
 
+const project = document.getElementById("header-project");
+const profile = document.getElementById("header-profile");
+const interactives = document.getElementById("header-interactives");
+
 const body = document.querySelector("body");
 const header = document.getElementById("header");
 const main = document.querySelector("main");
@@ -96,4 +100,36 @@ emailIcon.addEventListener("click", function () {
   copyText = emailClipBoard.value;
   navigator.clipboard.writeText(copyText).then();
   alert("클립보드에 텍스트가 복사되었습니다.");
+});
+
+project.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+});
+profile.addEventListener("click", function () {
+  window.scrollTo(0, 1720);
+});
+interactives.addEventListener("click", function () {
+  window.scrollTo(0, 2685);
+});
+
+const output = document.querySelector("#output");
+
+window.addEventListener("scroll", (event) => {
+  output.textContent = `scrollTop : ${this.scrollY}`;
+  if (this.scrollY >= 0 && this.scrollY < 1400) {
+    profile.classList.remove("bar");
+    interactives.classList.remove("bar");
+
+    project.classList.add("bar");
+  } else if (this.scrollY >= 1400 && this.scrollY <= 2250) {
+    project.classList.remove("bar");
+    interactives.classList.remove("bar");
+
+    profile.classList.add("bar");
+  } else if (this.scrollY >= 2250) {
+    project.classList.remove("bar");
+    profile.classList.remove("bar");
+
+    interactives.classList.add("bar");
+  }
 });

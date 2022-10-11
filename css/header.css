@@ -58,6 +58,7 @@ header.light #header-menu a {
   text-decoration: none;
   cursor: pointer;
   margin-left: 60px;
+  padding-bottom: 7px;
 }
 
 header.dark #darkmode_button {
@@ -76,6 +77,7 @@ header.light #darkmode_button {
   right: 0px;
   margin: 5px 10px 0 0;
   align-items: center;
+  margin-bottom: 10px;
 }
 #darkmode_switch {
   display: inline-block;
