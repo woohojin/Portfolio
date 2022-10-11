@@ -108,12 +108,12 @@
   height: 885px;
 }
 
-#content.dark #mini-profile {
+/* #content.dark #mini-profile {
   border-right: 2px solid var(--color-light);
 }
 #content.light #mini-profile {
   border-right: 2px solid var(--color-dark);
-}
+} */
 #mini-profile {
   display: flex;
   flex-direction: column;

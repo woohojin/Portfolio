@@ -28,9 +28,6 @@
 .hidden {
   display: none;
 }
-.bar {
-  border-bottom: 3px solid var(--color-light);
-}
 
 * {
   user-select: none;
