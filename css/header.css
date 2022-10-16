@@ -105,3 +105,12 @@ header.light #darkmode_button {
   font-size: 30px;
   margin-right: 5px;
 }
+
+@media (max-width: 1000px) {
+  #header-menu {
+    font-size: 18px;
+  }
+  #header-menu a {
+    margin-left: 40px;
+  }
+}

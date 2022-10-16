@@ -31,14 +31,14 @@
   }
   30% {
     font-size: inherit;
-    transform: translateY(-265.5px);
+    transform: translateY(-295%);
   }
   60% {
     font-size: 45px;
-    transform: translate(-608px, -265.5px);
+    transform: translate(-463%, -295%);
   }
   100% {
     font-size: 45px;
-    transform: translate(-608px, -265.5px) rotateZ(-10deg);
+    transform: translate(-463%, -295%) rotateZ(-10deg);
   }
 }

@@ -15,7 +15,7 @@
 }
 #content-project img {
   border-radius: 20px;
-  width: 600px;
+  width: 100%;
   height: 400px;
 }
 #content.dark .project-info {
@@ -31,7 +31,7 @@
 .project-info {
   display: flex;
   align-items: center;
-  width: 1300px;
+  width: 75%;
   height: 600px;
   border-radius: 25px;
 }
@@ -43,7 +43,7 @@
 }
 .project-image {
   margin: 0 50px;
-  width: 600px;
+  width: 42%;
   height: 400px;
 }
 .project-info_text {
@@ -104,7 +104,7 @@
 } */
 #content-profile {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 885px;
 }
 
@@ -118,7 +118,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 450px;
+  width: 500px;
   height: 100%;
 }
 #mini-profile > img {
@@ -139,6 +139,7 @@
   font-size: 17px;
   text-align: left;
   margin-bottom: 40px;
+  width: max-content;
 }
 #mini-profile_text :first-child {
   font-size: 20px;
@@ -184,7 +185,15 @@
   width: 100%;
   margin-top: 100px;
 }
-
+#profile_text {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0px 0px 40px;
+  font-size: 70px;
+}
+#profile_text :first-child {
+  margin-bottom: 10px;
+}
 #content.dark #profile_skills > div > span {
   border-bottom: 2px solid var(--color-light);
 }
@@ -194,11 +203,11 @@
 #profile_skills {
   display: flex;
   position: relative;
-  top: 450px;
-  width: 100%;
+  top: 160px;
+  width: 101%;
 }
 #profile_skills > :first-child {
-  margin-left: 50px;
+  margin-left: 40px;
 }
 #profile_skills > :not(:first-child) {
   margin-left: 80px;
@@ -246,4 +255,32 @@
 #interactives-link a {
   color: var(--color-light);
   margin-top: 30px;
+}
+
+@media (max-width: 1300px) {
+  .project-info_text {
+    font-size: 15px;
+  }
+  .project-info_text > :first-child {
+    font-size: 25px;
+  }
+  .project-info_text a {
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+  .project-link {
+    width: 300px;
+  }
+  .project-link > :first-child {
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1855px) {
+  #mini-profile {
+    margin-left: 30px;
+  }
 }
