@@ -6,7 +6,7 @@
 }
 #content-project {
   width: 100vw;
-  height: 1800px;
+  height: auto;
 }
 #content-project > div {
   width: 100vw;
@@ -145,11 +145,10 @@
   font-size: 20px;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
-#mini-profile_text :nth-child(6),
-#mini-profile_text :nth-child(7) {
-  margin-bottom: 4px;
+#mini-profile_text > span {
+  margin-bottom: 5px;
 }
 #content.dark #mini-profile svg {
   color: var(--color-light);
@@ -223,7 +222,9 @@
 #profile_skills > div > ul {
   margin-top: 30px;
 }
-
+#profile_skills > div > ul > li {
+  margin-top: 5px;
+}
 #frontend-skills ul,
 #backend-skills ul,
 #programs ul {
