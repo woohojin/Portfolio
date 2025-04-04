@@ -4,7 +4,6 @@ const emailIcon = document.getElementById("email-icon");
 
 const project = document.getElementById("header-project");
 const profile = document.getElementById("header-profile");
-const interactives = document.getElementById("header-interactives");
 
 const body = document.querySelector("body");
 const header = document.getElementById("header");
@@ -108,9 +107,6 @@ project.addEventListener("click", function () {
 profile.addEventListener("click", function () {
   window.scrollTo(0, 1720);
 });
-interactives.addEventListener("click", function () {
-  window.scrollTo(0, 2685);
-});
 
 // const output = document.querySelector("#output");
 
@@ -121,18 +117,11 @@ interactives.addEventListener("click", function () {
 window.addEventListener("scroll", (event) => {
   if (this.scrollY >= 0 && this.scrollY < 1400) {
     profile.classList.remove("bar");
-    interactives.classList.remove("bar");
 
     project.classList.add("bar");
   } else if (this.scrollY >= 1400 && this.scrollY <= 2250) {
     project.classList.remove("bar");
-    interactives.classList.remove("bar");
 
     profile.classList.add("bar");
-  } else if (this.scrollY >= 2250) {
-    project.classList.remove("bar");
-    profile.classList.remove("bar");
-
-    interactives.classList.add("bar");
   }
 });
