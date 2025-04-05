@@ -182,7 +182,7 @@
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 180px;
 }
 #profile_text {
   display: flex;
@@ -193,11 +193,23 @@
 #profile_text :first-child {
   margin-bottom: 10px;
 }
-#content.dark #profile_skills > div > span {
+#content.dark #profile_skills > div > span,
+#content.light #profile_skills > div > span {
+  position: relative;
+}
+#content.dark #profile_skills > div > span::after,
+#content.light #profile_skills > div > span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+}
+#content.dark #profile_skills > div > span::after {
   border-bottom: 2px solid var(--color-light);
 }
-#content.light #profile_skills > div > span {
-  border-bottom: 2px solid var(--color-dark);
+#content.light #profile_skills > div > span::after {
+  border-bottom: 3px solid var(--color-dark);
 }
 #profile_skills {
   display: flex;
@@ -212,9 +224,7 @@
   margin-left: 80px;
 }
 #profile_skills img {
-  height: 70px;
-  width: 70px;
-  margin-right: 15px;
+  height: 65px;
 }
 #profile_skills > div > span {
   font-size: 40px;
@@ -224,6 +234,7 @@
 }
 #profile_skills > div > ul > li {
   margin-top: 5px;
+  margin-right: 10px;
 }
 #frontend-skills ul,
 #backend-skills ul,
@@ -235,6 +246,7 @@
 #backend-skills > div :nth-child(3) {
   width: 100px;
 }
+
 #education > div {
   width: 200px;
 }
