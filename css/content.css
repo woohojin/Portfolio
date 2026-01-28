@@ -61,13 +61,17 @@
 }
 .project-link {
   display: flex;
-  width: 500px;
   flex-wrap: wrap;
 }
-.project-link > :first-child {
+.project-link > a {
   margin-right: 30px;
   margin-bottom: 10px;
 }
+.project-link > :last-child {
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
 #content.dark .project-info a {
   background-color: var(--color-dark2);
   color: var(--color-light);
@@ -221,13 +225,14 @@
   margin-left: 40px;
 }
 #profile_skills > :not(:first-child) {
-  margin-left: 80px;
+  margin-left: 60px;
 }
 #profile_skills img {
+  width: 65px;
   height: 65px;
 }
 #profile_skills > div > span {
-  font-size: 40px;
+  font-size: 35px;
 }
 #profile_skills > div > ul {
   margin-top: 30px;
@@ -238,18 +243,17 @@
 }
 #frontend-skills ul,
 #backend-skills ul,
+#database-skills ul,
 #programs ul {
-  width: 290px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-#backend-skills > div :nth-child(3) {
-  width: 100px;
+
+#database-skills {
+  width: 190px;
 }
 
-#education > div {
-  width: 200px;
-}
 #education > div > :first-child {
   margin-bottom: 10px;
 }
