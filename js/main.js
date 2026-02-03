@@ -72,26 +72,59 @@ window.onload = function darkMode() {
   });
 };
 
+// 기존 메인화면 애니메이션
+// startButton.addEventListener("click", function () {
+//   mainNameSecond.classList.add("transparent");
+//   mainPortCon.classList.add("transparent");
+//   startButton.classList.add("transparent");
+//   header.classList.add("shadow");
+//   content.classList.add("shadow");
+//   headerMenu.classList.add("fadeIn");
+//   mainNameFirst.classList.add("logo");
+
+//   setTimeout(function () {
+//     mainNameFirstTwo.classList.add("transparent");
+//   }, 2000);
+
+//   setTimeout(function () {
+//     headerLogo.classList.remove("hidden");
+//     main.classList.add("hidden");
+//     content.classList.remove("hidden");
+//     content.classList.add("center");
+//     headerMenu.classList.remove("hidden");
+//   }, 2500);
+// });
+
 startButton.addEventListener("click", function () {
   mainNameSecond.classList.add("transparent");
   mainPortCon.classList.add("transparent");
+  mainNameFirstTwo.classList.add("transparent");
   startButton.classList.add("transparent");
   header.classList.add("shadow");
   content.classList.add("shadow");
   headerMenu.classList.add("fadeIn");
-  mainNameFirst.classList.add("logo");
 
   setTimeout(function () {
-    mainNameFirstTwo.classList.add("transparent");
-  }, 2000);
+    mainNameFirstOne.style.animation =
+      "fadeOut-topToBottom 1s ease-in forwards";
+  }, 750);
 
   setTimeout(function () {
     headerLogo.classList.remove("hidden");
+    headerLogo.style.animation = `
+    fadeIn-bottomToTop 1s ease-in forwards,
+    rotateAfterReveal 0.85s cubic-bezier(.84,.57,1,.8) 0.8s forwards
+  `;
+  }, 2100);
+
+  setTimeout(function () {
     main.classList.add("hidden");
-    content.classList.remove("hidden");
     content.classList.add("center");
+    content.classList.remove("hidden");
     headerMenu.classList.remove("hidden");
-  }, 2500);
+    content.style.animation = "content-fadeIn 0.2s ease-in-out forwards";
+    headerMenu.style.animation = "content-fadeIn 0.2s ease-in-out forwards";
+  }, 4500);
 });
 
 emailIcon.addEventListener("click", function () {

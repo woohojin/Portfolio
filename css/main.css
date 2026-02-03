@@ -20,14 +20,15 @@ main {
 }
 #main-name_first {
   display: flex;
+  overflow: hidden;
 }
 #main-name_second {
   margin-left: 50px;
 }
-#main-name_first.logo {
+/* #main-name_first.logo {
   animation: logo 1.5s ease-in-out forwards;
   animation-delay: 0.1s;
-}
+} */
 
 .main-portfolio {
   transform: translateY(-50px);
