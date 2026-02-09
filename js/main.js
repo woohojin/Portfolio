@@ -106,14 +106,14 @@ startButton.addEventListener("click", function () {
 
   setTimeout(function () {
     mainNameFirstOne.style.animation =
-      "fadeOut-topToBottom 1s ease-in forwards";
+      "fadeOut-topToBottom 0.75s ease-in forwards";
   }, 750);
 
   setTimeout(function () {
     headerLogo.classList.remove("hidden");
     headerLogo.style.animation = `
     fadeIn-bottomToTop 1s ease-in forwards,
-    rotateAfterReveal 0.85s cubic-bezier(.84,.57,1,.8) 0.8s forwards
+    rotateAfterReveal 0.75s cubic-bezier(.84,.57,1,.8) 0.7s forwards
   `;
   }, 2100);
 
@@ -124,7 +124,7 @@ startButton.addEventListener("click", function () {
     headerMenu.classList.remove("hidden");
     content.style.animation = "content-fadeIn 0.2s ease-in-out forwards";
     headerMenu.style.animation = "content-fadeIn 0.2s ease-in-out forwards";
-  }, 4500);
+  }, 4000);
 });
 
 emailIcon.addEventListener("click", function () {
