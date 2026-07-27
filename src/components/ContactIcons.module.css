@@ -1,0 +1,22 @@
+.list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.list a,
+.list button {
+  border: none;
+  background: none;
+  font: inherit;
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.list a:hover,
+.list button:hover {
+  color: var(--color-accent-strong);
+}
