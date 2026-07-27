@@ -1,11 +1,13 @@
 import { profile } from '../content/profile'
+import { asset } from '../lib/asset'
 import { ContactIcons } from './ContactIcons'
 import styles from './ProfileSection.module.css'
 
 export function ProfileSection() {
   return (
     <div className={styles.wrap}>
-      <img className={styles.photo} src={profile.photo} alt={profile.name} />
+      <img className={styles.photo} src={asset(profile.photo)} alt={profile.name} />
+      <h3 className={styles.name}>{profile.name}</h3>
       <ContactIcons />
       <p className={styles.bio}>{profile.bio}</p>
 

@@ -13,9 +13,9 @@ export function Home() {
 
   useEffect(() => {
     if (location.hash) {
-      document.querySelector(location.hash)?.scrollIntoView({ behavior: 'smooth' })
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'smooth' })
     }
-  }, [location.hash])
+  }, [location.key])
 
   return (
     <div>

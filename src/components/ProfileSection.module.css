@@ -10,6 +10,11 @@
   object-fit: cover;
 }
 
+.name {
+  margin: 0.75rem 0 0;
+  color: var(--color-accent-strong);
+}
+
 .bio {
   color: var(--color-text-muted);
   line-height: 1.7;

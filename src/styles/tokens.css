@@ -1,11 +1,11 @@
 :root {
-  --color-bg: #f5f7fb;
-  --color-bg-alt: #ffffff;
-  --color-text: #1b2540;
-  --color-text-muted: #4a5578;
-  --color-accent: #2743a8;
-  --color-accent-strong: #16214f;
-  --color-border: #d7deef;
+  --color-bg: #0b1020;
+  --color-bg-alt: #131a30;
+  --color-text: #e7ebfa;
+  --color-text-muted: #a8b2d6;
+  --color-accent: #5b7cf0;
+  --color-accent-strong: #8fa5f5;
+  --color-border: #232c4d;
 }
 
 body.dark {

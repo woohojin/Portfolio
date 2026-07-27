@@ -10,7 +10,7 @@ import './styles/tokens.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <DarkModeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:projectId" element={<ProjectDetail />} />
