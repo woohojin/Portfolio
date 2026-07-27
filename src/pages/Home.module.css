@@ -1,0 +1,17 @@
+.projects {
+  padding: 3rem 1.5rem;
+  scroll-margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.profile {
+  padding: 3rem 1.5rem;
+  scroll-margin-top: 2rem;
+}
