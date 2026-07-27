@@ -1,3 +1,10 @@
+import { DarkModeToggle } from '../components/DarkModeToggle'
+
 export function Home() {
-  return <div>Home page placeholder</div>
+  return (
+    <div>
+      <DarkModeToggle />
+      <div>Home page placeholder</div>
+    </div>
+  )
 }
