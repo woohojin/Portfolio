@@ -1,5 +1,5 @@
 ---
-title: DaCoffee (다올커피)
+title: 다올커피
 summary: 커피 원두, 머신, 카페용품을 파는 이커머스 사이트와 이걸 관리하는 별도 Admin 시스템으로 이루어진 개인 프로젝트
 techStack: Java 17, Spring Boot 3.2.4, Spring Security, Spring Data JPA (Hibernate), Redis, MySQL, React (Vite)
 github: https://github.com/woohojin/Coffee

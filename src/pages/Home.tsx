@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Intro } from '../components/Intro'
@@ -10,6 +10,7 @@ import styles from './Home.module.css'
 export function Home() {
   const location = useLocation()
   const projects = getAllProjects()
+  const [headerVisible, setHeaderVisible] = useState(false)
 
   useEffect(() => {
     if (location.hash) {
@@ -17,9 +18,18 @@ export function Home() {
     }
   }, [location.key])
 
+  useEffect(() => {
+    const onScroll = () => setHeaderVisible(window.scrollY > 10)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <div>
-      <Header />
+      <div className={`${styles.headerSlot} ${headerVisible ? styles.headerVisible : ''}`}>
+        <Header />
+      </div>
       <Intro />
       <section id="projects" className={styles.projects}>
         <h2>Project</h2>

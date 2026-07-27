@@ -5,6 +5,9 @@ import { DarkModeProvider } from './contexts/DarkModeContext'
 import { Home } from './pages/Home'
 import { ProjectDetail } from './pages/ProjectDetail'
 import { NotFound } from './pages/NotFound'
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css'
+import '@fontsource/noto-sans-kr/400.css'
+import '@fontsource/noto-sans-kr/700.css'
 import './styles/tokens.css'
 
 createRoot(document.getElementById('root')!).render(

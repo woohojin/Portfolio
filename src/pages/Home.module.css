@@ -1,6 +1,25 @@
+.headerSlot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.headerVisible {
+  transform: translateY(0);
+}
+
 .projects {
   padding: 3rem 1.5rem;
   scroll-margin-top: 2rem;
+}
+
+.projects h2,
+.profile h2 {
+  margin-bottom: 2rem;
 }
 
 .grid {
@@ -8,7 +27,7 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
   max-width: 960px;
-  margin: 0 auto;
+  margin-left: 150px;
 }
 
 .profile {
