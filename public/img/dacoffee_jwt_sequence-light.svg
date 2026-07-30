@@ -1,0 +1,93 @@
+<svg viewBox="0 0 900 920" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Pretendard, sans-serif">
+  <defs>
+    <marker id="arrowSolidLight" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#4a5578" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1b2540">JWT 인증 흐름 (Access + Refresh + Redis)</text>
+
+  <!-- Lifeline headers -->
+  <rect x="60" y="50" width="200" height="64" rx="10" fill="#e6e1fa" stroke="#7c6fdb" stroke-width="1.5" />
+  <text x="160" y="78" text-anchor="middle" font-size="18" font-weight="700" fill="#3730a3">Client</text>
+  <text x="160" y="100" text-anchor="middle" font-size="14" fill="#6d28d9">Axios Interceptor</text>
+
+  <rect x="360" y="50" width="220" height="64" rx="10" fill="#d1f5ea" stroke="#0f9d78" stroke-width="1.5" />
+  <text x="470" y="78" text-anchor="middle" font-size="18" font-weight="700" fill="#065f46">Spring Boot API</text>
+  <text x="470" y="100" text-anchor="middle" font-size="14" fill="#0f766e">Controller-Service</text>
+
+  <rect x="670" y="50" width="170" height="64" rx="10" fill="#fde4d8" stroke="#e07a45" stroke-width="1.5" />
+  <text x="755" y="78" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Redis</text>
+  <text x="755" y="100" text-anchor="middle" font-size="14" fill="#9a3412">토큰 저장소</text>
+
+  <!-- Lifelines -->
+  <line x1="160" y1="114" x2="160" y2="900" stroke="#9aa3c0" stroke-width="1.5" stroke-dasharray="4 4" />
+  <line x1="470" y1="114" x2="470" y2="900" stroke="#9aa3c0" stroke-width="1.5" stroke-dasharray="4 4" />
+  <line x1="755" y1="114" x2="755" y2="900" stroke="#9aa3c0" stroke-width="1.5" stroke-dasharray="4 4" />
+
+  <!-- 1. Client -> API request -->
+  <text x="315" y="150" text-anchor="middle" font-size="15" fill="#1b2540">① API 요청 + Access Token (헤더)</text>
+  <line x1="160" y1="162" x2="470" y2="162" stroke="#4a5578" stroke-width="1.8" marker-end="url(#arrowSolidLight)" />
+
+  <!-- API self note: token expired -->
+  <rect x="475" y="176" width="240" height="48" rx="6" fill="#ffffff" stroke="#d7deef" />
+  <text x="595" y="196" text-anchor="middle" font-size="14" fill="#1b2540">Access Token 검증</text>
+  <text x="595" y="214" text-anchor="middle" font-size="13" fill="#b91c1c">→ 만료 (401 대상)</text>
+
+  <!-- 2. API --> Client 401 -->
+  <text x="315" y="254" text-anchor="middle" font-size="15" fill="#1b2540">② 401 Unauthorized</text>
+  <line x1="470" y1="266" x2="160" y2="266" stroke="#4a5578" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrowSolidLight)" />
+
+  <!-- Client self note -->
+  <rect x="55" y="284" width="270" height="70" rx="6" fill="#ffffff" stroke="#d7deef" />
+  <text x="190" y="306" text-anchor="middle" font-size="14" fill="#1b2540">③ 인터셉터가 401 캐치</text>
+  <text x="190" y="326" text-anchor="middle" font-size="13" fill="#4a5578">이미 재발급 진행 중이면</text>
+  <text x="190" y="344" text-anchor="middle" font-size="13" fill="#4a5578">대기열에 넣고 대기 (중복 방지)</text>
+
+  <!-- 4. Client -> API refresh -->
+  <text x="315" y="386" text-anchor="middle" font-size="15" fill="#1b2540">④ POST /api/auth/refresh</text>
+  <text x="315" y="402" text-anchor="middle" font-size="13" fill="#4a5578">(Refresh Token, HttpOnly Cookie)</text>
+  <line x1="160" y1="416" x2="470" y2="416" stroke="#4a5578" stroke-width="1.8" marker-end="url(#arrowSolidLight)" />
+
+  <!-- 5. API -> Redis -->
+  <text x="612" y="448" text-anchor="middle" font-size="14" fill="#1b2540">⑤ Refresh Token 조회 / 블랙리스트 확인</text>
+  <line x1="470" y1="460" x2="755" y2="460" stroke="#4a5578" stroke-width="1.8" marker-end="url(#arrowSolidLight)" />
+
+  <!-- 6. Redis --> API -->
+  <text x="612" y="492" text-anchor="middle" font-size="15" fill="#1b2540">⑥ 검증 결과</text>
+  <line x1="755" y1="504" x2="470" y2="504" stroke="#4a5578" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrowSolidLight)" />
+
+  <!-- alt fragment box -->
+  <rect x="90" y="528" width="640" height="360" fill="none" stroke="#b7c0dc" stroke-width="1.5" />
+  <path d="M90,528 L150,528 L150,546 L136,558 L90,558 Z" fill="#eef1fa" stroke="#b7c0dc" stroke-width="1.2" />
+  <text x="102" y="548" font-size="14" font-weight="700" fill="#1b2540">alt</text>
+  <text x="410" y="548" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1b2540">[Refresh Token 유효]</text>
+
+  <!-- valid branch -->
+  <rect x="475" y="572" width="240" height="48" rx="6" fill="#ffffff" stroke="#d7deef" />
+  <text x="595" y="592" text-anchor="middle" font-size="14" fill="#1b2540">⑦ 새 Access Token 발급</text>
+  <text x="595" y="610" text-anchor="middle" font-size="13" fill="#0f766e">(+ Refresh Token 재발급)</text>
+
+  <text x="315" y="648" text-anchor="middle" font-size="15" fill="#1b2540">⑧ 200 OK + 새 Access Token</text>
+  <line x1="470" y1="660" x2="160" y2="660" stroke="#4a5578" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrowSolidLight)" />
+
+  <text x="315" y="692" text-anchor="middle" font-size="15" fill="#1b2540">⑨ 대기열에 쌓였던 요청 재시도</text>
+  <line x1="160" y1="704" x2="470" y2="704" stroke="#4a5578" stroke-width="1.8" marker-end="url(#arrowSolidLight)" />
+
+  <!-- divider -->
+  <line x1="90" y1="734" x2="730" y2="734" stroke="#b7c0dc" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="410" y="756" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1b2540">else [무효 / 블랙리스트에 등록됨]</text>
+
+  <text x="315" y="796" text-anchor="middle" font-size="15" fill="#1b2540">401 Unauthorized</text>
+  <line x1="470" y1="808" x2="160" y2="808" stroke="#4a5578" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrowSolidLight)" />
+
+  <rect x="55" y="824" width="270" height="48" rx="6" fill="#ffffff" stroke="#d7deef" />
+  <text x="190" y="844" text-anchor="middle" font-size="14" fill="#1b2540">로그인 페이지로 강제 리다이렉트</text>
+  <text x="190" y="862" text-anchor="middle" font-size="13" fill="#4a5578">(재귀 호출 방지 처리 포함)</text>
+
+  <!-- lifeline ends -->
+  <circle cx="160" cy="900" r="3" fill="#4a5578" />
+  <circle cx="470" cy="900" r="3" fill="#4a5578" />
+  <circle cx="755" cy="900" r="3" fill="#4a5578" />
+</svg>

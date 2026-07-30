@@ -1,0 +1,99 @@
+<svg viewBox="0 0 1040 820" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Pretendard, sans-serif">
+  <defs>
+    <marker id="erdArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#a8b2d6" />
+    </marker>
+  </defs>
+
+  <!-- connectors (drawn first, under boxes) -->
+  <line x1="150" y1="190" x2="150" y2="230" stroke="#a8b2d6" stroke-width="1.6" marker-end="url(#erdArrow)" />
+  <text x="160" y="204" font-size="11" fill="#a8b2d6">1</text>
+  <text x="160" y="226" font-size="11" fill="#a8b2d6">N</text>
+
+  <line x1="310" y1="289" x2="380" y2="289" stroke="#a8b2d6" stroke-width="1.6" marker-end="url(#erdArrow)" />
+  <text x="318" y="283" font-size="11" fill="#a8b2d6">N</text>
+  <text x="358" y="283" font-size="11" fill="#a8b2d6">1</text>
+
+  <line x1="640" y1="248" x2="700" y2="248" stroke="#a8b2d6" stroke-width="1.6" marker-end="url(#erdArrow)" />
+  <text x="650" y="242" font-size="11" fill="#a8b2d6">1:N</text>
+
+  <line x1="510" y1="370" x2="510" y2="395" stroke="#a8b2d6" stroke-width="1.6" />
+  <line x1="440" y1="395" x2="700" y2="395" stroke="#a8b2d6" stroke-width="1.6" />
+  <line x1="440" y1="395" x2="440" y2="420" stroke="#a8b2d6" stroke-width="1.6" marker-end="url(#erdArrow)" />
+  <line x1="700" y1="395" x2="700" y2="420" stroke="#a8b2d6" stroke-width="1.6" marker-end="url(#erdArrow)" />
+  <text x="410" y="410" font-size="11" fill="#a8b2d6">1:1</text>
+  <text x="710" y="410" font-size="11" fill="#a8b2d6">1:1</text>
+
+  <!-- member -->
+  <rect x="50" y="30" width="260" height="160" rx="8" fill="#131a30" stroke="#7c6fdb" stroke-width="1.5" />
+  <text x="66" y="54" font-size="16" font-weight="700" fill="#c4b5fd">member</text>
+  <line x1="50" y1="64" x2="310" y2="64" stroke="#7c6fdb" stroke-width="1" />
+  <text x="66" y="86" font-size="13" fill="#a8b2d6"><tspan fill="#c4b5fd" font-weight="700">PK </tspan>member_id</text>
+  <text x="66" y="108" font-size="13" fill="#a8b2d6">member_name</text>
+  <text x="66" y="130" font-size="13" fill="#a8b2d6">member_email</text>
+  <text x="66" y="152" font-size="13" fill="#a8b2d6">member_tier</text>
+  <text x="66" y="174" font-size="13" fill="#a8b2d6">member_disabled_status</text>
+
+  <!-- member_withdrawal -->
+  <rect x="350" y="30" width="230" height="116" rx="8" fill="#131a30" stroke="#7c6fdb" stroke-width="1.5" stroke-dasharray="5 4" />
+  <text x="366" y="54" font-size="16" font-weight="700" fill="#c4b5fd">member_withdrawal</text>
+  <line x1="350" y1="64" x2="580" y2="64" stroke="#7c6fdb" stroke-width="1" stroke-dasharray="5 4" />
+  <text x="366" y="86" font-size="13" fill="#a8b2d6"><tspan fill="#c4b5fd" font-weight="700">PK </tspan>member_id</text>
+  <text x="366" y="108" font-size="13" fill="#a8b2d6">member_withdrawal_date</text>
+  <text x="366" y="130" font-size="11" fill="#7c8ab0">member → 탈퇴 시 이관 (FK 없음)</text>
+
+  <!-- cart -->
+  <rect x="50" y="230" width="260" height="116" rx="8" fill="#131a30" stroke="#e07a45" stroke-width="1.5" />
+  <text x="66" y="254" font-size="16" font-weight="700" fill="#f3a878">cart</text>
+  <line x1="50" y1="264" x2="310" y2="264" stroke="#e07a45" stroke-width="1" />
+  <text x="66" y="286" font-size="13" fill="#a8b2d6"><tspan fill="#f3a878" font-weight="700">PK,FK </tspan>member_id</text>
+  <text x="66" y="308" font-size="13" fill="#a8b2d6"><tspan fill="#f3a878" font-weight="700">PK,FK </tspan>product_code</text>
+  <text x="66" y="330" font-size="13" fill="#a8b2d6">quantity</text>
+
+  <!-- product -->
+  <rect x="380" y="210" width="260" height="160" rx="8" fill="#131a30" stroke="#0f9d78" stroke-width="1.5" />
+  <text x="396" y="234" font-size="16" font-weight="700" fill="#6fd3b3">product</text>
+  <line x1="380" y1="244" x2="640" y2="244" stroke="#0f9d78" stroke-width="1" />
+  <text x="396" y="266" font-size="13" fill="#a8b2d6"><tspan fill="#6fd3b3" font-weight="700">PK </tspan>product_code</text>
+  <text x="396" y="288" font-size="13" fill="#a8b2d6">product_type (BEAN/MIX/CAFE)</text>
+  <text x="396" y="310" font-size="13" fill="#a8b2d6">product_name</text>
+  <text x="396" y="332" font-size="13" fill="#a8b2d6">product_price</text>
+  <text x="396" y="354" font-size="13" fill="#a8b2d6">product_sold_out</text>
+
+  <!-- product_image -->
+  <rect x="700" y="230" width="260" height="116" rx="8" fill="#131a30" stroke="#0f9d78" stroke-width="1.5" />
+  <text x="716" y="254" font-size="16" font-weight="700" fill="#6fd3b3">product_image</text>
+  <line x1="700" y1="264" x2="960" y2="264" stroke="#0f9d78" stroke-width="1" />
+  <text x="716" y="286" font-size="13" fill="#a8b2d6"><tspan fill="#6fd3b3" font-weight="700">PK </tspan>file_id</text>
+  <text x="716" y="308" font-size="13" fill="#a8b2d6"><tspan fill="#6fd3b3" font-weight="700">FK </tspan>product_code</text>
+  <text x="716" y="330" font-size="13" fill="#a8b2d6">file_name</text>
+
+  <!-- bean -->
+  <rect x="330" y="420" width="220" height="116" rx="8" fill="#131a30" stroke="#0f9d78" stroke-width="1.5" />
+  <text x="346" y="444" font-size="16" font-weight="700" fill="#6fd3b3">bean</text>
+  <line x1="330" y1="454" x2="550" y2="454" stroke="#0f9d78" stroke-width="1" />
+  <text x="346" y="476" font-size="13" fill="#a8b2d6"><tspan fill="#6fd3b3" font-weight="700">PK,FK </tspan>product_code</text>
+  <text x="346" y="498" font-size="13" fill="#a8b2d6">bean_species</text>
+  <text x="346" y="520" font-size="13" fill="#a8b2d6">bean_country</text>
+
+  <!-- mix -->
+  <rect x="590" y="420" width="220" height="94" rx="8" fill="#131a30" stroke="#0f9d78" stroke-width="1.5" />
+  <text x="606" y="444" font-size="16" font-weight="700" fill="#6fd3b3">mix</text>
+  <line x1="590" y1="454" x2="810" y2="454" stroke="#0f9d78" stroke-width="1" />
+  <text x="606" y="476" font-size="13" fill="#a8b2d6"><tspan fill="#6fd3b3" font-weight="700">PK,FK </tspan>product_code</text>
+  <text x="606" y="498" font-size="13" fill="#a8b2d6">mix_company</text>
+
+  <!-- order_history -->
+  <rect x="50" y="600" width="900" height="164" rx="8" fill="#131a30" stroke="#9a9488" stroke-width="1.5" />
+  <text x="66" y="624" font-size="16" font-weight="700" fill="#c9d0ec">order_history</text>
+  <line x1="50" y1="634" x2="950" y2="634" stroke="#9a9488" stroke-width="1" />
+  <text x="66" y="654" font-size="11.5" fill="#7c8ab0">member_id / product_code는 FK가 아닌 주문 시점 스냅샷 값 (상품이 삭제/변경돼도 주문 기록은 그대로 유지)</text>
+  <text x="66" y="682" font-size="13" fill="#a8b2d6"><tspan fill="#c9d0ec" font-weight="700">PK </tspan>order_num</text>
+  <text x="66" y="704" font-size="13" fill="#a8b2d6">order_id</text>
+  <text x="66" y="726" font-size="13" fill="#a8b2d6">member_id (스냅샷)</text>
+  <text x="66" y="748" font-size="13" fill="#a8b2d6">product_code (스냅샷)</text>
+  <text x="550" y="682" font-size="13" fill="#a8b2d6">product_name / price / unit</text>
+  <text x="550" y="704" font-size="13" fill="#a8b2d6">quantity</text>
+  <text x="550" y="726" font-size="13" fill="#a8b2d6">total_price</text>
+  <text x="550" y="748" font-size="13" fill="#a8b2d6">order_date</text>
+</svg>

@@ -5,24 +5,150 @@
   line-height: 1.7;
 }
 
-.back {
-  display: inline-block;
+.content .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-bottom: 1.5rem;
-  color: var(--color-accent);
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
   text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.content .back:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateX(-2px);
+}
+
+.banner {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  color: var(--color-accent-strong);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.techList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.techList li {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  color: var(--color-text-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.content h2 {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.content h2:first-of-type {
+  margin-top: 2.5rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.content h3 {
+  margin-top: 2rem;
+  color: var(--color-accent-strong);
+}
+
+.content p {
+  margin: 1rem 0;
+}
+
+.content strong {
+  color: var(--color-accent-strong);
+}
+
+.content a {
+  color: var(--color-accent);
+}
+
+.content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.content ul,
+.content ol {
+  padding-left: 1.25rem;
+}
+
+.content li {
+  margin: 0.35rem 0;
 }
 
 .content table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.content th {
+  background: var(--color-bg);
+  font-weight: 700;
 }
 
 .content th,
 .content td {
   border: 1px solid var(--color-border);
-  padding: 0.5rem;
+  padding: 0.6rem 0.75rem;
   text-align: left;
+}
+
+.content th:first-child,
+.content td:first-child {
+  white-space: nowrap;
+  width: 1%;
 }
 
 .content img {
