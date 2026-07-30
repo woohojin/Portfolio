@@ -12,7 +12,8 @@ const DarkModeContext = createContext<DarkModeContextValue | undefined>(undefine
 export function DarkModeProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<Mode>(() => {
     const stored = localStorage.getItem('mode')
-    return stored === 'light' ? 'light' : 'dark'
+    if (stored === 'light' || stored === 'dark') return stored
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
   })
 
   useEffect(() => {
