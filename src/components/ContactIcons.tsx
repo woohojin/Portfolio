@@ -12,17 +12,19 @@ export function ContactIcons() {
   }
 
   return (
-    <ul className={styles.list}>
+    <ul className={styles.buttonList}>
       <li>
-        <a href={profile.contact.github} target="_blank" rel="noreferrer">
+        <button onClick={copyEmail} className={styles.primary}>
+          {profile.contact.email}
+        </button>
+      </li>
+      <li>
+        <a href={profile.contact.github} target="_blank" rel="noreferrer" className={styles.secondary}>
           GitHub
         </a>
       </li>
       <li>
-        <button onClick={copyEmail}>Email</button>
-      </li>
-      <li>
-        <a href={profile.contact.velog} target="_blank" rel="noreferrer">
+        <a href={profile.contact.velog} target="_blank" rel="noreferrer" className={styles.secondary}>
           Velog
         </a>
       </li>

@@ -16,6 +16,9 @@ body.dark {
   --color-accent: #5b7cf0;
   --color-accent-strong: #8fa5f5;
   --color-border: #232c4d;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 16px 40px rgba(2, 6, 23, 0.55), 0 0 0 1px rgba(91, 124, 240, 0.12);
+  --overlay-bg: rgba(11, 16, 32, 0.85);
 }
 
 body.light {
@@ -26,6 +29,9 @@ body.light {
   --color-accent: #2743a8;
   --color-accent-strong: #16214f;
   --color-border: #d7deef;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 60, 0.06);
+  --shadow-md: 0 16px 40px rgba(15, 23, 60, 0.12), 0 0 0 1px rgba(39, 67, 168, 0.06);
+  --overlay-bg: rgba(245, 247, 251, 0.85);
 }
 
 body {
@@ -36,6 +42,39 @@ body {
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: -0.01em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  transition: color 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease),
+    transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
 h1,
@@ -52,4 +91,14 @@ h2 {
 
 h3 {
   font-size: 1.15rem;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
 }

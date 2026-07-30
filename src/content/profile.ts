@@ -12,7 +12,7 @@ export interface EducationItem {
 export const profile = {
   name: '우호진',
   photo: '/img/woohojin.jpg',
-  bio: 'Java/Spring 기반 백엔드 개발자를 목표로 하고 있습니다. 기술을 그냥 가져다 쓰는 게 아니라, 왜 이 방식을 써야 하는지 이해하고 넘어가려고 하는 편입니다. 하나의 프로젝트를 여러 기술 스택으로 갈아엎어보면서, 각 방식의 차이를 직접 몸으로 겪어본 경험이 강점입니다.',
+  bio: 'Java/Spring 기반 백엔드 개발자를 목표로 하고 있습니다.\n기술을 그냥 가져다 쓰는 게 아니라, 왜 이 방식을 써야 하는지 이해하고 넘어가려고 하는 편입니다.\n하나의 프로젝트를 여러 기술 스택으로 갈아엎어보면서, 각 방식의 차이를 직접 몸으로 겪어본 경험이 강점입니다.',
   techStack: [
     {
       category: 'Backend',
@@ -20,7 +20,7 @@ export const profile = {
     },
     {
       category: 'Frontend',
-      items: ['React (Vite)', 'Axios', 'React Router', 'Context API'],
+      items: ['HTML', 'CSS', 'JavaScript', 'React (Vite)', 'Axios', 'React Router', 'Context API'],
     },
     {
       category: 'Infra / Tools',

@@ -1,48 +1,98 @@
 .hero {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 1.5rem;
-  text-align: center;
+  gap: 1.1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
   background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));
 }
 
-.name {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  letter-spacing: 0.05em;
-  color: var(--color-accent-strong);
+.prompt {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 0.95rem;
   margin: 0;
   animation: rise 0.8s ease-out both;
 }
 
-.first {
+.name {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.line {
+  display: block;
+  color: var(--color-text);
+  animation: rise 0.8s ease-out 0.1s both;
+}
+
+.accent {
   color: var(--color-accent);
 }
 
-.tagline {
+.description {
   color: var(--color-text-muted);
-  font-size: 1.1rem;
-  margin: 0;
-  animation: rise 0.8s ease-out 0.15s both;
-}
-
-.cta {
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--color-accent);
-  background: transparent;
-  color: var(--color-accent-strong);
-  cursor: pointer;
   font-size: 1rem;
+  max-width: 35rem;
+  margin: 0;
   animation: rise 0.8s ease-out 0.3s both;
 }
 
-.cta:hover {
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  animation: rise 0.8s ease-out 0.4s both;
+}
+
+.cta {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
   background: var(--color-accent);
-  color: var(--color-bg-alt);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.ctaGhost {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.ctaGhost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  opacity: 0.6;
+  animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes rise {
@@ -53,5 +103,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
   }
 }
