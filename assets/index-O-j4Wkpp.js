@@ -15,6 +15,7 @@ title: 다올커피
 summary: 커피 원두, 머신, 카페용품을 파는 이커머스 사이트와 이걸 관리하는 별도 Admin 시스템으로 이루어진 개인 프로젝트
 techStack: Java 17, Spring Boot 3.2.4, Spring Security, Spring Data JPA (Hibernate), Redis, MySQL, React (Vite), Docker, Apache POI
 github: https://github.com/woohojin/Coffee
+erdCloud: https://www.erdcloud.com/d/izXWq5ayXDjphw82k
 website: 배포 준비중 (AWS EC2 → Oracle Cloud + Docker 이전 대기)
 image: /img/daallcoffee.png
 hasDetailPage: true
@@ -77,7 +78,8 @@ Access Token이 만료되면 axios 인터셉터가 401을 캐치해서 \`/api/au
 클라이언트가 중간에 개발자 도구로 요청을 조작하더라도 서버 쪽에서 걸러지도록 만든 구조입니다.
 
 **Admin을 별도 React 앱으로 뗀 이유**\\
-일반 사용자 화면과 관리자 화면을 같은 프로젝트 안에 두면 권한 관리나 배포가 계속 꼬일 것 같아서, 처음부터 별도 프로젝트(\`frontend-admin\`)로 분리했습니다.
+일반 사용자 화면과 관리자 화면을 같은 프로젝트 안에 두면 권한 관리나 배포가 계속 꼬일 것 같아서, 처음부터 별도 프로젝트(\`frontend-admin\`)로 분리했습니다.\\
+회원/상품/주문 전체에 대한 CRUD와 엑셀 다운로드를 관리자 전용으로 제공하고, 신규 회원은 등급 승인 전까지 카탈로그 조회 자체를 막아서 등급별 도매가가 비회원/미승인 회원에게 노출되지 않도록 접근을 제어했습니다.
 
 ## 트러블슈팅
 
