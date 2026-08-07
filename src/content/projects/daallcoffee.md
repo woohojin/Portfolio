@@ -53,8 +53,9 @@ DB는 매일 자정이 지나 날이 바뀌면 백업해둔 덤프로 초기화�
 
 ![DaCoffee 아키텍처](/img/dacoffee_architecture.svg)
 
-AWS EC2 한 대 위에서 Docker Compose로 백엔드/프론트/프론트-Admin/MySQL/Redis 컨테이너를 함께 띄웁니다.\
-`daallcoffee.com`과 `admin.daallcoffee.com`은 각각 별도의 React 빌드를 서빙하는 컨테이너로 연결되고, 그 안의 Nginx가 정적 파일은 직접 서빙하고 `/api` 요청만 Spring Boot 컨테이너로 프록시합니다.\
+AWS EC2 한 대 위에서 Docker Compose로 백엔드/프론트/프론트-Admin/MySQL/Redis 컨테이너를 함께 띄우고, Nginx는 두 단계로 나눠서 씁니다.\
+EC2 OS에 직접 설치한 호스트 Nginx가 80/443을 받아 Certbot(Let's Encrypt) 인증서를 적용하고, 도메인 기준으로 `daallcoffee.com`은 프론트 컨테이너(`:5173`), `admin.daallcoffee.com`은 프론트-Admin 컨테이너(`:5174`)로 라우팅합니다.\
+각 컨테이너 안에는 정적 파일을 서빙하고 `/api` 요청만 Docker 내부망으로 백엔드 컨테이너에 프록시하는 자체 Nginx가 따로 있습니다 (로컬 개발할 때 쓰던 Vite 프록시와 같은 역할).\
 Controller-Service-Repository로 계층을 나눴고, JWT는 Access Token(짧은 수명)과 Refresh Token(HttpOnly 쿠키에 저장, Redis에서 관리)을 나눠서 씁니다.
 
 ### 인증 흐름 (Access + Refresh + Redis)
