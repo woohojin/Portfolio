@@ -20,7 +20,9 @@ hasDetailPage: true
 - 사용자 사이트: https://daallcoffee.com
 - 관리자 사이트: https://admin.daallcoffee.com
 
-게스트 계정은 별도로 준비해서 곧 안내드리겠습니다.
+**게스트 계정**
+- 일반 사용자: `daallguest` / `DaallGuest1234!`
+- 관리자: `daallguestadmin` / `DaallGuest1234!`
 
 ## 핵심 기능
 
