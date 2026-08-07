@@ -22,8 +22,12 @@ hasDetailPage: true
 
 ### 게스트 계정
 
+폐쇄몰이라 비회원은 상품 조회조차 되지 않기 때문에, 바로 둘러보실 수 있도록 게스트/관리자 계정을 미리 만들어뒀습니다.
+
 - 일반 사용자: `daallguest` / `DaallGuest1234!`
 - 관리자: `daallguestadmin` / `DaallGuest1234!`
+
+DB는 매일 자정이 지나 날이 바뀌면 백업해둔 덤프로 초기화됩니다.
 
 ## 핵심 기능
 
