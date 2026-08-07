@@ -11,44 +11,50 @@
   <!-- React boxes -->
   <rect x="60" y="46" width="300" height="88" rx="10" fill="#e6e1fa" stroke="#7c6fdb" stroke-width="1.5" />
   <text x="210" y="80" text-anchor="middle" font-size="17" font-weight="700" fill="#3730a3">React (사용자)</text>
-  <text x="210" y="104" text-anchor="middle" font-size="13" fill="#6d28d9">일반 사용자 화면</text>
+  <text x="210" y="104" text-anchor="middle" font-size="13" fill="#6d28d9">daallcoffee.com</text>
 
   <rect x="440" y="46" width="300" height="88" rx="10" fill="#e6e1fa" stroke="#7c6fdb" stroke-width="1.5" />
   <text x="590" y="80" text-anchor="middle" font-size="17" font-weight="700" fill="#3730a3">React (Admin)</text>
-  <text x="590" y="104" text-anchor="middle" font-size="13" fill="#6d28d9">관리자 전용 화면</text>
+  <text x="590" y="104" text-anchor="middle" font-size="13" fill="#6d28d9">admin.daallcoffee.com</text>
 
-  <!-- merge into Nginx -->
-  <line x1="210" y1="134" x2="210" y2="168" stroke="#4a5578" stroke-width="1.8" />
-  <line x1="590" y1="134" x2="590" y2="168" stroke="#4a5578" stroke-width="1.8" />
-  <line x1="210" y1="168" x2="590" y2="168" stroke="#4a5578" stroke-width="1.8" />
-  <line x1="400" y1="168" x2="400" y2="206" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
+  <line x1="210" y1="134" x2="210" y2="168" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
+  <line x1="590" y1="134" x2="590" y2="168" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
 
-  <!-- Nginx -->
-  <rect x="290" y="214" width="220" height="64" rx="10" fill="#f0ede4" stroke="#9a9488" stroke-width="1.5" />
-  <text x="400" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="#44403c">Nginx (예정)</text>
+  <!-- Nginx (컨테이너별로 하나씩) -->
+  <rect x="60" y="176" width="300" height="64" rx="10" fill="#f0ede4" stroke="#9a9488" stroke-width="1.5" />
+  <text x="210" y="204" text-anchor="middle" font-size="16" font-weight="700" fill="#44403c">Nginx</text>
+  <text x="210" y="224" text-anchor="middle" font-size="12" fill="#6b6459">정적 파일 서빙 + /api 프록시</text>
 
-  <line x1="400" y1="278" x2="400" y2="316" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
+  <rect x="440" y="176" width="300" height="64" rx="10" fill="#f0ede4" stroke="#9a9488" stroke-width="1.5" />
+  <text x="590" y="204" text-anchor="middle" font-size="16" font-weight="700" fill="#44403c">Nginx</text>
+  <text x="590" y="224" text-anchor="middle" font-size="12" fill="#6b6459">정적 파일 서빙 + /api 프록시</text>
+
+  <!-- merge into Spring Boot -->
+  <line x1="210" y1="240" x2="210" y2="270" stroke="#4a5578" stroke-width="1.8" />
+  <line x1="590" y1="240" x2="590" y2="270" stroke="#4a5578" stroke-width="1.8" />
+  <line x1="210" y1="270" x2="590" y2="270" stroke="#4a5578" stroke-width="1.8" />
+  <line x1="400" y1="270" x2="400" y2="306" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
 
   <!-- Spring Boot -->
-  <rect x="250" y="324" width="300" height="88" rx="10" fill="#d1f5ea" stroke="#0f9d78" stroke-width="1.5" />
-  <text x="400" y="358" text-anchor="middle" font-size="17" font-weight="700" fill="#065f46">Spring Boot API 서버</text>
-  <text x="400" y="382" text-anchor="middle" font-size="13" fill="#0f766e">Controller-Service-Repository</text>
+  <rect x="250" y="314" width="300" height="88" rx="10" fill="#d1f5ea" stroke="#0f9d78" stroke-width="1.5" />
+  <text x="400" y="348" text-anchor="middle" font-size="17" font-weight="700" fill="#065f46">Spring Boot API 서버</text>
+  <text x="400" y="372" text-anchor="middle" font-size="13" fill="#0f766e">Controller-Service-Repository</text>
 
   <!-- split into MySQL / Redis -->
-  <line x1="400" y1="412" x2="400" y2="446" stroke="#4a5578" stroke-width="1.8" />
-  <line x1="210" y1="446" x2="590" y2="446" stroke="#4a5578" stroke-width="1.8" />
-  <line x1="210" y1="446" x2="210" y2="484" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
-  <line x1="590" y1="446" x2="590" y2="484" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
+  <line x1="400" y1="402" x2="400" y2="436" stroke="#4a5578" stroke-width="1.8" />
+  <line x1="210" y1="436" x2="590" y2="436" stroke="#4a5578" stroke-width="1.8" />
+  <line x1="210" y1="436" x2="210" y2="474" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
+  <line x1="590" y1="436" x2="590" y2="474" stroke="#4a5578" stroke-width="1.8" marker-end="url(#archArrowLight)" />
 
   <!-- MySQL / Redis -->
-  <rect x="60" y="492" width="300" height="88" rx="10" fill="#fde4d8" stroke="#e07a45" stroke-width="1.5" />
-  <text x="210" y="526" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">MySQL</text>
-  <text x="210" y="550" text-anchor="middle" font-size="13" fill="#9a3412">EC2, 영속 데이터</text>
+  <rect x="60" y="482" width="300" height="88" rx="10" fill="#fde4d8" stroke="#e07a45" stroke-width="1.5" />
+  <text x="210" y="516" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">MySQL</text>
+  <text x="210" y="540" text-anchor="middle" font-size="13" fill="#9a3412">EC2, 영속 데이터</text>
 
-  <rect x="440" y="492" width="300" height="88" rx="10" fill="#fde4d8" stroke="#e07a45" stroke-width="1.5" />
-  <text x="590" y="526" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">Redis</text>
-  <text x="590" y="550" text-anchor="middle" font-size="13" fill="#9a3412">토큰/세션 관리</text>
+  <rect x="440" y="482" width="300" height="88" rx="10" fill="#fde4d8" stroke="#e07a45" stroke-width="1.5" />
+  <text x="590" y="516" text-anchor="middle" font-size="17" font-weight="700" fill="#7c2d12">Redis</text>
+  <text x="590" y="540" text-anchor="middle" font-size="13" fill="#9a3412">토큰/세션 관리</text>
 
   <!-- Server label -->
-  <text x="400" y="616" text-anchor="middle" font-size="20" font-weight="700" fill="#1b2540">Server</text>
+  <text x="400" y="606" text-anchor="middle" font-size="20" font-weight="700" fill="#1b2540">Server (AWS EC2, Docker Compose)</text>
 </svg>

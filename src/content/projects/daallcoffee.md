@@ -53,8 +53,9 @@ DB는 매일 자정이 지나 날이 바뀌면 백업해둔 덤프로 초기화�
 
 ![DaCoffee 아키텍처](/img/dacoffee_architecture.svg)
 
-Controller-Service-Repository로 계층을 나눴고, JWT는 Access Token(짧은 수명)과 Refresh Token(HttpOnly 쿠키에 저장, Redis에서 관리)을 나눠서 씁니다.\
-관리자 페이지는 일반 사용자 화면과 완전히 분리해서 별도 React 앱으로 배포합니다.
+AWS EC2 한 대 위에서 Docker Compose로 백엔드/프론트/프론트-Admin/MySQL/Redis 컨테이너를 함께 띄웁니다.\
+`daallcoffee.com`과 `admin.daallcoffee.com`은 각각 별도의 React 빌드를 서빙하는 컨테이너로 연결되고, 그 안의 Nginx가 정적 파일은 직접 서빙하고 `/api` 요청만 Spring Boot 컨테이너로 프록시합니다.\
+Controller-Service-Repository로 계층을 나눴고, JWT는 Access Token(짧은 수명)과 Refresh Token(HttpOnly 쿠키에 저장, Redis에서 관리)을 나눠서 씁니다.
 
 ### 인증 흐름 (Access + Refresh + Redis)
 
