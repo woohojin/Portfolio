@@ -46,7 +46,7 @@ export function ProjectDetail() {
               <li key={tech}>{tech}</li>
             ))}
           </ul>
-          {(project.github || isUrl(project.website) || project.velog) && (
+          {(project.github || isUrl(project.website) || project.adminWebsite || project.velog) && (
             <div className={styles.links}>
               {project.github && (
                 <a href={project.github} target="_blank" rel="noreferrer">
@@ -56,6 +56,11 @@ export function ProjectDetail() {
               {isUrl(project.website) && (
                 <a href={project.website} target="_blank" rel="noreferrer">
                   Website
+                </a>
+              )}
+              {project.adminWebsite && (
+                <a href={project.adminWebsite} target="_blank" rel="noreferrer">
+                  Admin
                 </a>
               )}
               {project.velog && (

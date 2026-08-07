@@ -7,7 +7,9 @@ export interface Project {
   techStack: string[]
   github?: string
   website?: string
+  adminWebsite?: string
   velog?: string
+  erdCloud?: string
   image?: string
   hasDetailPage: boolean
   body: string
@@ -28,7 +30,9 @@ function toProject(id: string, raw: string): Project {
     techStack: data.techStack ? data.techStack.split(',').map(s => s.trim()) : [],
     github: data.github || undefined,
     website: data.website || undefined,
+    adminWebsite: data.adminWebsite || undefined,
     velog: data.velog || undefined,
+    erdCloud: data.erdCloud || undefined,
     image: data.image || undefined,
     hasDetailPage: data.hasDetailPage === 'true',
     body,

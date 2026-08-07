@@ -4,7 +4,8 @@ summary: 커피 원두, 머신, 카페용품을 파는 이커머스 사이트와
 techStack: Java 17, Spring Boot 3.2.4, Spring Security, Spring Data JPA (Hibernate), Redis, MySQL, React (Vite), Docker, Apache POI
 github: https://github.com/woohojin/Coffee
 erdCloud: https://www.erdcloud.com/d/izXWq5ayXDjphw82k
-website: 배포 준비중 (AWS EC2 → Oracle Cloud + Docker 이전 대기)
+website: https://daallcoffee.com
+adminWebsite: https://admin.daallcoffee.com
 image: /img/daallcoffee.png
 hasDetailPage: true
 ---
@@ -13,6 +14,17 @@ hasDetailPage: true
 개인 프로젝트입니다.
 
 - GitHub: https://github.com/woohojin/Coffee
+
+### 체험해보기
+
+- 사용자 사이트: https://daallcoffee.com
+- 관리자 사이트: https://admin.daallcoffee.com
+
+**게스트 계정**
+- 일반 사용자: _(작성 예정)_
+- 관리자: _(작성 예정)_
+
+_(부연 설명 작성 예정)_
 
 ### 핵심 기능
 
